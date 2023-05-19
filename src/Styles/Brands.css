@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.fourGearBrands {
+  width: 100vw;
+  max-width: 100%;
+  height: 137.64vh;
+  background-color: #eeeeee;
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearBrandContainer {
+  width: 52.76vw;
+  height: 119.68vh;
+  background-color: #ffffff;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.fourGearBrandContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-family: "Poppins", sans-serif; */
+}
+.fourGearBrandContainer h1 {
+  font-weight: 900;
+  font-size: 3.35vw;
+  line-height: 5.8rem;
+  color: #b65e0c;
+  text-align: center;
+  border-bottom: 2px solid #b65e0c;
+  /* width: 90%; */
+}
+.fourGearBrandInnerContainer{
+    height:92.802vh;
+    width:46.55vw;
+    /* border:2px solid purple; */
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+.fourGearBrandLogo{
+    width:13vw;
+    height:14.91vh;
+    /* border:2px solid orange; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.fourGearBrandLogo img{
+    max-width: 13vw;
+    max-height:14.9vh;
+}

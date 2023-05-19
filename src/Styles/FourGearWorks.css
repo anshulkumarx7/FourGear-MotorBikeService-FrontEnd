@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.fourGearWork {
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  margin:5rem 0;
+  /* height: 83.75vh; */
+  /* border: 2px solid black; */
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearworkContainer {
+  width: 68.61vw;
+  /* height: 59vh; */
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearworkContainer h1 {
+  font-weight: 600;
+  font-size: 4.305vw;
+  line-height: 7.5rem;
+  text-align: center;
+  color: #b65e0c;
+  padding: 3rem 0;
+}
+.fourGearWorkTimeline {
+  width: 65.45vw;
+  /* height:21.14vh; */
+  /* border: 2px solid purple; */
+  display: flex;
+  align-items: center;
+}
+.fourGearWorkTimeline img {
+  max-height: 100%;
+  max-width: 10.46vw;
+}
+.fourGearWorkBorder {
+  width: 8.15vw;
+  height: 4px;
+  background-color: #b65e0c;
+}
+.fourGearWorkContent {
+  padding-top:2rem;
+  width: 100%;
+  /* height: 8.611vh; */
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fourGearWorkContentContainer {
+  width: 13.627vw;
+  /* height: 100%; */
+  /* border: 2px solid yellow; */
+  font-weight: 600;
+  font-size: 1.785vw;
+  line-height: 1.73vw;
+  text-align: center;
+}
