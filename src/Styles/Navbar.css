@@ -1,0 +1,76 @@
+:root {
+  --primary-color: #b65e0c;
+}
+#fourGearNavbar {
+  width: 100vw;
+  max-width: 100%;
+  height: 20.55vh;
+  /* border: 2px solid orange; */
+  font-family: "Inter";
+  font-style: normal;
+}
+#fourGearNavbar .fourGearNavbarHeader {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 27.94%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+}
+.fourGearNavbarContactno {
+  width: 18.4rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+
+.fourGearNavbarContactno h1 {
+  padding-left: 0.6rem;
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 2.1rem;
+}
+.fourGearNavbarSocialMedia {
+  width: 12.6rem;
+  height: 2.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* margin-right:1.59%; */
+}
+.fourGearNavbarMain {
+  width: 100%;
+  height: 72.06%;
+  /* border: 2px solid black; */
+  background-color: #ffffff;
+  padding: 0 8.3%;
+}
+.fourGearNavbarMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fourGearNavbarMain .fourGearNavbarContent {
+  width: 55.902vw;
+  height: 6.9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fourGearNavbarContent a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a.active{
+  color:black;
+}
+

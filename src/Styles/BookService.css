@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+  --primary-color: #b65e0c;
+}
+.fourGearBookService {
+  width: 100vw;
+  max-width: 100%;
+  height: 104.02vh;
+  background-color: #eeeeee;
+
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearBookServiceContainer {
+  width: 89.1667vw;
+  height: 82.22vh;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fourGearBookServiceDetails {
+  width: 42.013vw;
+  height: 100%;
+  /* border: 2px solid blueviolet; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.fourGearBookServiceDetails h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 4.5rem;
+  color: #000000;
+  padding-top: 0.5rem;
+}
+.fourGearBookServiceDetails p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.9rem;
+  line-height: 2.5rem;
+  padding-top: 1.4rem;
+  color: #000000;
+}
+.fourGearBookServiceDetailsIcons {
+  width: 40.625vw;
+  height: 49.44vh;
+  /* border: 2px solid orange; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.fourBookServiceBox {
+  width: 11.59vw;
+  height: 22.083vh;
+  background-color: #d8d3d3;
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fourBookServiceBox p {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+}
+.fourGearBookServiceForm {
+  width: 34.6527vw;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 4.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearBookServiceForm h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 2.7rem;
+  line-height: 4rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--primary-color);
+}
+.fourGearBookServiceFormContainer {
+  width: 26.32vw;
+  height: auto;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+}
+.fourGearBookServiceFormContainer input,
+select {
+  width: 100%;
+  height: 6.25vh;
+  padding: 0.5rem 0.5rem 0.5rem 2.8rem;
+  font-size: 1.2rem;
+  margin-bottom:2rem;
+  background-color: #f2f2f2;
+  border-radius: 3.6rem;
+  border: none;
+}
+.fourGearBookServiceFormContainer input:last-child{
+  margin-bottom:0;
+}
+.fourGearBookServiceFormContainer select{
+  color:grey;
+}
+.fourGearBookServiceFormContainer option{
+  font-size:1.5rem;
+}
+.fourGearBookServiceForm button {
+  font-family: "Poppins", sans-serif;
+  width:23.82vw;
+  height:6.95vh;
+  background-color:var(--primary-color);
+  color:#ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  border: none;
+  border-radius:1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.formGearBookServiceContainerButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
