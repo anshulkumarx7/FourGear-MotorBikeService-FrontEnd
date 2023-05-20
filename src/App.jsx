@@ -19,8 +19,8 @@ function App() {
         {/* <Hero /> */}
         <BookService />
         {/* <Features />
-        <Pickup30/>
-        <FourGearWorks/> */}
+        <Pickup30/> */}
+        <FourGearWorks/>
         <Benefit />
         <Brands/>
         {/* <Footer /> */}

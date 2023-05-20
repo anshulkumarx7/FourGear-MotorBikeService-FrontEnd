@@ -91,7 +91,7 @@
 .fourGearBookServiceForm h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
-  font-size: 1.87vw;
+  font-size: 2.361vw;
   line-height: 2.77vw;
   text-align: center;
   padding: 1rem 0;
@@ -135,7 +135,7 @@ select {
   line-height: 3rem;
   border: none;
   border-radius: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   cursor: pointer;
 }
 .formGearBookServiceContainerButton {
@@ -149,6 +149,14 @@ select {
   }
   .fourBookServiceBox {
     margin: 0.75rem;
+  }
+  .fourGearBookServiceForm button{
+    height:5vh;
+  }
+}
+@media (min-width:516px) and (max-width:769px) {
+  .fourGearBookServiceForm button{
+    height:5vh;
   }
 }
 @media screen and (max-width: 515px) {
@@ -205,4 +213,5 @@ select {
     height:2.8rem;  
     font-size: 1.3rem;
   }
+  
 }

@@ -9,6 +9,7 @@ function FourGearWorks() {
     <div className="fourGearWork">
       <div className="fourGearworkContainer">
         <h1>How Four Gear Works?</h1>
+        <div className="fourGearWorkInnerContainer">
         <div className="fourGearWorkTimeline">
           <img src={TimeLine1}></img>
           <div className="fourGearWorkBorder"></div>
@@ -23,7 +24,7 @@ function FourGearWorks() {
                 <p>Choose your location</p>
             </div>
             <div className="fourGearWorkContentContainer">
-                <p>Select Bike For Service/Repair</p>
+                <p>Select Bike For Service</p>
             </div>
             <div className="fourGearWorkContentContainer">
                 <p>Book a mechanic</p>
@@ -32,6 +33,8 @@ function FourGearWorks() {
                 <p>Pay Online/Cash</p>
             </div>
         </div>
+        </div>
+        
       </div>
     </div>
   );
