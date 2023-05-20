@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.fourGearFeature {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  max-width: 100%;
+  height: 101vh;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearFeatureContainer {
+  width: 74.375vw;
+  height: 75.63vh;
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.fourGearFeatureContent {
+  width: 70.33vw;
+  height: auto;
+  /* border: 2px solid black; */
+  text-align: center;
+}
+.fourGearFeatureContent h2 {
+  font-weight: 700;
+  font-size: 3.6vw;
+  line-height: 4.4vw;
+  color: #b65e0c;
+}
+.fourGearFeatureContent p {
+  font-weight: 400;
+  font-size: 1.88rem;
+  line-height: 127.52%;
+}
+.fourGearFeatureInnerContainer {
+  width: 100%;
+  height: 49.11vh;
+  /* border: 2px solid purple; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fourGearFeatureIconBox {
+  width: 20.8vw;
+  height: 100%;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+
+}
+.fourGearFeatureIconBox img{
+    max-width: 15.73vw;
+}
+.fourGearFeatureIconBox h3 {
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 127.52%;
+}
+.fourGearFeatureIconBox h5{
+    font-weight: 300;
+    font-size: 18.806px;
+    line-height: 127.52%;
+}
