@@ -20,9 +20,9 @@ function App() {
         <BookService />
         {/* <Features />
         <Pickup30/>
-        <FourGearWorks/>
+        <FourGearWorks/> */}
         <Benefit />
-        <Brands/>
+        {/* <Brands/>
         <Footer /> */}
 
       </BrowserRouter>
