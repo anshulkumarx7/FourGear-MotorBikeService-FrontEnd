@@ -71,6 +71,7 @@
   }
   .fourGearBenefitContainer h1{
     font-size: 2.1rem;
+    line-height: 3.268rem;
   }
   .fourGearBenefitInnerContainer{
     flex-wrap: nowrap;

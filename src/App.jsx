@@ -22,8 +22,8 @@ function App() {
         <Pickup30/>
         <FourGearWorks/> */}
         <Benefit />
-        {/* <Brands/>
-        <Footer /> */}
+        <Brands/>
+        {/* <Footer /> */}
 
       </BrowserRouter>
     </div>

@@ -11,8 +11,10 @@
   justify-content: center;
 }
 .fourGearBrandContainer {
-  width: 52.76vw;
-  height: 119.68vh;
+  /* width: 52.76vw; */
+  width:auto;
+  /* height: 119.68vh; */
+  height:auto;
   background-color: #ffffff;
   /* border: 2px solid red; */
   display: flex;
@@ -36,17 +38,24 @@
   /* width: 90%; */
 }
 .fourGearBrandInnerContainer{
-    height:92.802vh;
-    width:46.55vw;
+    /* height:92.802vh; */
+    height:auto;
+    /* width:46.55vw; */
+    width:auto;
+    margin: 1.5rem;
     /* border:2px solid purple; */
-    display:flex;
+    /* display:flex;
     align-items: center;
     justify-content:space-around;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem;
 }
 .fourGearBrandLogo{
     width:13vw;
     height:14.91vh;
+    margin:1rem;
     /* border:2px solid orange; */
     display: flex;
     align-items: center;
@@ -56,4 +65,38 @@
 .fourGearBrandLogo img{
     max-width: 13vw;
     max-height:14.9vh;
+}
+@media (min-width:500px) and (max-width:650px){
+  
+  .fourGearBrandLogo img{
+    width:6.22rem;
+  }
+  .fourGearBrandLogo{
+    width:auto;
+  }
+  .fourGearBrands{
+    height: auto;
+  }
+}
+@media  screen and (max-width:500px) {
+  .fourGearBrands{
+    height:auto;
+    padding: 3rem 0;
+  }
+  .fourGearBrandContainer{
+    width:27.48rem;
+  }
+  .fourGearBrandContainer h1{
+    padding-top: 1rem;
+    font-size: 2.142rem;
+    line-height: 2.108rem;
+  }
+  .fourGearBrandInnerContainer{
+    margin: 1rem;
+  }
+  .fourGearBrandLogo{
+    width: auto;
+    height:3.697rem;
+  }
+  
 }
