@@ -23,7 +23,7 @@ function App() {
         <FourGearWorks/>
         <Benefit />
         <Brands/>
-        {/* <Footer /> */}
+        <Footer />
 
       </BrowserRouter>
     </div>
