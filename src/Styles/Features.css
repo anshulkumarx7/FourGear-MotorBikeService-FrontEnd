@@ -107,11 +107,11 @@
   }
   .fourGearFeatureIconBox{
     width:20rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
   .fourGearFeatureIconBox img{
     max-width:14.839rem;
-    height:23.14rem;
+    /* height:23.14rem; */
 
   }
   .fourGearFeatureIconBox h3{
