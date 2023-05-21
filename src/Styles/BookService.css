@@ -159,7 +159,7 @@ select {
     height:5vh;
   }
 }
-@media screen and (max-width: 515px) {
+@media screen and (max-width: 700px) {
   .fourGearBookServiceContainer {
     flex-direction: column;
     

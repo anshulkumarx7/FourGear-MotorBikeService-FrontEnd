@@ -18,8 +18,8 @@ function App() {
         <Navbar />
         {/* <Hero /> */}
         <BookService />
-        {/* <Features />
-        <Pickup30/> */}
+        <Features />
+        {/* <Pickup30/> */}
         <FourGearWorks/>
         <Benefit />
         <Brands/>
