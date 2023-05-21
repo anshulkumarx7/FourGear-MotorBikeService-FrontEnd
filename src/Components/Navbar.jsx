@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../Styles/Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import FacebookLogo from "../assets/facebook 1.svg";
@@ -8,7 +8,19 @@ import LinkedinLogo from "../assets/linkedin 1.svg";
 import CallLogo from "../assets/phone-call 1.svg";
 import FourgearLogo from "../assets/lopgo 1.svg";
 import UserLogo from "../assets/user-circle 1.svg";
+import Cross from "../assets/cross.svg";
+import Bars from "../assets/bars.svg";
 function Navbar() {
+  const navRef = useRef();
+  const removeTransitionRef=useRef();
+
+  function showNavbar() {
+    navRef.current.classList.toggle("responsive_nav");
+  }
+  function hideNavbar(){
+    navRef.current.classList.remove("responsive_nav");
+    removeTransitionRef.current.classList.add("remove_transition");
+  }
   return (
     <div id="fourGearNavbar">
       <div className="fourGearNavbarHeader">
@@ -31,19 +43,25 @@ function Navbar() {
           </Link>
         </div>
       </div>
-      <div className="fourGearNavbarMain">
-        <img src={FourgearLogo}></img>
-        <div className="fourGearNavbarContent">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/partner">Partner</NavLink>
-          <NavLink to="/gallery">Gallery</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+      <div className="fourGearNavbarMain" >
+        <img className="mainLogo" src={FourgearLogo}></img>
+        <div className="fourGearNavbarContent" ref={navRef} >
+          <NavLink to="/" onClick={hideNavbar}>Home</NavLink>
+          <NavLink to="/about" onClick={hideNavbar}>About</NavLink>
+          <NavLink to="/services" onClick={hideNavbar}>Services</NavLink>
+          <NavLink to="/partner" onClick={hideNavbar}>Partner</NavLink>
+          <NavLink to="/gallery" onClick={hideNavbar}>Gallery</NavLink>
+          <NavLink to="/contact" onClick={hideNavbar}>Contact</NavLink>
+          <button className="nav-btn close-button" onClick={showNavbar}>
+            <img src={Cross}></img>
+          </button>
         </div>
-        <NavLink to="/user">
+        <NavLink className="userLogo" to="/user">
           <img src={UserLogo}></img>
         </NavLink>
+        <button className="nav-btn open-button" onClick={showNavbar}>
+          <img src={Bars}></img>
+        </button>
       </div>
     </div>
   );
