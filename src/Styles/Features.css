@@ -97,26 +97,26 @@
     width:29.2rem;
   }
   .fourGearFeatureContent h2{
-    font-size: 2.7rem;
-    line-height: 3.2rem;
+    font-size: 2.0rem;
+    line-height: 2.2rem;
     padding-bottom: 1rem;
   }
   .fourGearFeatureContent p{
-    font-size: 1.461rem;
-    line-height: 1.863rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
   }
   .fourGearFeatureIconBox{
     width:20rem;
     padding-bottom: 2rem;
   }
   .fourGearFeatureIconBox img{
-    max-width:14.839rem;
+    max-width:10.839rem;
     /* height:23.14rem; */
 
   }
   .fourGearFeatureIconBox h3{
-    font-size: 1.8rem;
-    line-height: 2.1rem;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
   }
   .fourGearFeatureIconBox h5{
     font-size: 1.244rem;
