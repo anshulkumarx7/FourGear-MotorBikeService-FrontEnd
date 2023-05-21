@@ -39,3 +39,18 @@
   line-height: 2vw;
   font-family: "Poppins", sans-serif;
 }
+@media screen and (max-width:515px) {
+  .fourGearPickUpContainer img{
+    max-width:30rem;
+    height:15rem;
+    padding-bottom:2rem;
+  }
+  .fourGearPickUpContainer h2{
+    font-size:1.3rem;
+    line-height: 1.5rem;
+  }
+  .colchange{
+    font-size:1.3rem;
+    line-height: 1.5rem;
+  }
+}
