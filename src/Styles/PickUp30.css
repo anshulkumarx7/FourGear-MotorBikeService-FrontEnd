@@ -2,7 +2,9 @@
 .fourGearPickUp {
   width: 100vw;
   max-width: 100%;
-  height: 93.194vh;
+  /* height: 93.194vh; */
+  height: auto;
+  padding:5rem 0;
   background-color: #eeeeee;
   /* border: 2px solid black; */
   display: flex;
@@ -11,7 +13,8 @@
 }
 .fourGearPickUpContainer {
   width: 72vw;
-  height: 54.1vh;
+  /* height: 54.1vh; */
+  height:auto;
   /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
@@ -20,18 +23,19 @@
 }
 .fourGearPickUpContainer h2 {
   font-weight: 1000;
-  font-size: 2.45916rem;
-  line-height: 93.52%;
+  font-size: 1.71vw;
+  line-height:2vw;
   font-family: "Poppins", sans-serif;
 }
 .fourGearPickUpContainer img{
     max-width: 67.71vw;
     height:100%;
+    padding-bottom: 3rem;
 }
 .colchange {
   color: #b65e0c;
   font-weight: 1000;
-  font-size: 2.459rem;
-  line-height: 93.52%;
+  font-size: 1.71vw;
+  line-height: 2vw;
   font-family: "Poppins", sans-serif;
 }

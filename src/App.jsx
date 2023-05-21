@@ -19,7 +19,7 @@ function App() {
         {/* <Hero /> */}
         <BookService />
         <Features />
-        {/* <Pickup30/> */}
+        <Pickup30/>
         <FourGearWorks/>
         <Benefit />
         <Brands/>
