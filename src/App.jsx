@@ -10,6 +10,7 @@ import Brands from "./Components/Brands";
 import FourGearWorks from "./Components/FourGearWorks";
 import Features from "./Components/Features";
 import Benefit from "./Components/Benefit";
+import CustomerSpeaks from "./Components/CustomerSpeaks";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Pickup30/>
         <FourGearWorks/>
         <Benefit />
+        <CustomerSpeaks />
         <Brands/>
         <Footer />
 
