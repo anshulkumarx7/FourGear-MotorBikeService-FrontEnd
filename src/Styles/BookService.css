@@ -239,6 +239,7 @@ select {
   .fourBookServiceBox {
     width: 9.8rem;
     height: 9.49rem;
+    margin: unset;
   }
   .fourBookServiceBox img {
     width: 3.049rem;
@@ -272,5 +273,9 @@ select {
     height:2.8rem;  
     font-size: 1.3rem;
   }
-  
+}
+@media (min-width:700px) and (max-width:780px){
+  .fourBookServiceBox{
+    margin: unset;
+  }
 }
