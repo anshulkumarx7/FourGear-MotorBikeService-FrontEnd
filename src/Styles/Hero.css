@@ -5,7 +5,8 @@
 .fourGearHero {
   width: 100vw;
   max-width: 100%;
-  height: 96.944vh;
+  /* height: 96.944vh; */
+  height:auto;
   /* border: 2px solid black; */
   background: linear-gradient(
     179.5deg,
@@ -14,19 +15,24 @@
   );
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding:3rem 0;
+  /* justify-content: center; */
 }
 .fourGearHeroContainer {
   width: 79.2361%;
-  height: 72.638vh;
+  /* height: 72.638vh; */
+  height:auto;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin:0 auto;
+
   /* border: 2px solid red; */
 }
 .fourGearHeroContainer img {
   max-width: 90.877%;
   height: 95.96%;
-  margin-left: 6.45rem;
+  /* margin-left: 6.45rem; */
 }
 .fourGearHeroInnerContainer {
   width: 70vw;
@@ -35,7 +41,7 @@
   border-radius: 92px;
   margin-left: -12.9rem;
   z-index: -1;
-  margin-right: 10.5rem;
+  /* margin-right: 10.5rem; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,4 +64,32 @@
 .bd{
   color:#FFFFFF;
   font-weight: 700 !important;
+}
+@media screen and (max-width:817px) {
+  .fourGearHeroContainer{
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .fourGearHeroInnerContainer{
+    width:unset;
+    height:unset;
+    background-color: unset;
+    margin-left: unset;
+    z-index: unset;
+  }
+  .fourGearHeroInnerContent{
+    align-items: center;
+    width: auto;
+    height:auto;
+    padding:2rem ;
+  }
+  .fourGearHeroInnerContent p{
+    font-weight: 700;
+    font-size:2.3rem;
+    line-height:2.6rem;
+    padding-bottom: 0.5rem;
+  }
+  .bd{
+    color:#b65e0c;
+  }
 }

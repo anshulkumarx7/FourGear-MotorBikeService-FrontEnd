@@ -60,7 +60,8 @@
 }
 .fourBookServiceBox {
   width: 11.59vw;
-  height: 22.083vh;
+  /* height: 22.083vh; */
+  height:15.9rem;
   background-color: #d8d3d3;
   border-radius: 1.6rem;
   display: flex;
@@ -159,14 +160,12 @@ select {
     height:5vh;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
   .fourGearBookServiceContainer {
     flex-direction: column;
-    
   }
   .fourGearBookDetailsInfo {
     width: 27.04rem;
-    /* height: 7.579rem; */
   }
   .fourGearBookServiceDetails h2 {
     font-size: 1.74298rem;
@@ -207,6 +206,64 @@ select {
   .fourGearBookServiceForm input,select{
     width:19.58rem;
     height:2.5rem;  
+  }
+  .fourGearBookServiceFormContainer button{
+    width:100%;
+    height:2.8rem;  
+    font-size: 1.3rem;
+  }
+  
+}
+@media (min-width:501px) and (max-width:700px) {
+  .fourGearBookServiceContainer {
+    flex-direction: column;
+  }
+  .fourGearBookDetailsInfo {  
+    width:100%;
+  }
+  .fourGearBookServiceDetails{
+    width:100%;
+  }
+  .fourGearBookServiceDetails h2 {
+    font-size: 2.3rem;
+    text-align: center;
+    line-height: 2.1rem;
+  }
+  .fourGearBookServiceDetails p {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  .fourBookServiceBox {
+    width: 9.8rem;
+    height: 9.49rem;
+  }
+  .fourBookServiceBox img {
+    width: 3.049rem;
+  }
+  .fourGearBookServiceDetailsIcons {
+    height:18.77rem;
+    margin: 1rem 0;
+    flex-wrap: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem;
+  }
+  .fourGearBookServiceContainer{
+    width:38rem;
+  }
+  .fourGearBookServiceForm{
+    width: 31.803rem;
+    margin-top: 2rem;
+  }
+  .fourGearBookServiceFormContainer{
+     width:80%;
+  }
+  .fourGearBookServiceForm h2{
+    font-size: 2rem;
+  }
+  .fourGearBookServiceForm input,select{
+    height:3.5rem;  
   }
   .fourGearBookServiceFormContainer button{
     width:100%;

@@ -17,7 +17,7 @@ function App() {
     <div className="main">
       <BrowserRouter>
         <Navbar />
-        {/* <Hero /> */}
+        <Hero />
         <BookService />
         <Features />
         <Pickup30/>
