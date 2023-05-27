@@ -13,6 +13,7 @@ import Benefit from "./Components/Benefit";
 import CustomerSpeaks from "./Components/CustomerSpeaks";
 import Vision from "./Components/Vision";
 import Contact from "./Components/Contact";
+import Login from "./Components/Login";
 function App() {
   return (
     <div className="main">
@@ -28,6 +29,7 @@ function App() {
         <Brands/>
         <Vision />
         <Contact />
+        <Login />
         <Footer />
 
       </BrowserRouter>
