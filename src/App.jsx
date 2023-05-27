@@ -12,6 +12,7 @@ import Features from "./Components/Features";
 import Benefit from "./Components/Benefit";
 import CustomerSpeaks from "./Components/CustomerSpeaks";
 import Vision from "./Components/Vision";
+import Contact from "./Components/Contact";
 function App() {
   return (
     <div className="main">
@@ -25,8 +26,9 @@ function App() {
         <Benefit />
         <CustomerSpeaks />
         <Brands/>
-        <Footer />
         <Vision />
+        <Contact />
+        <Footer />
 
       </BrowserRouter>
     </div>
