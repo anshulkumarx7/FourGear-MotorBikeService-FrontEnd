@@ -77,11 +77,15 @@
         padding: 0.5rem 0;
     }
     .fourGearContactContent h3{
-        padding:1rem 0;
+        padding:0.5rem 0;
     }
     .fourGearContactIcon img{
         width:2rem;
+        height:2rem;
         padding:0 0.5rem;
+    }
+    .fourGearContactIcon h3{
+        padding: unset;
     }
     
 }
