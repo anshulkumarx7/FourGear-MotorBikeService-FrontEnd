@@ -61,8 +61,8 @@
   margin: auto 0;
   margin-bottom: 2.5rem;
 }
-.fourGearSigninButton{
-    margin-top:2rem;
+.fourGearSigninButton {
+  margin-top: 2rem;
 }
 .bt-signin {
   display: flex;
@@ -70,13 +70,49 @@
   justify-content: center;
 }
 .bt-signin a {
-  color: #B65E0C;
+  color: #b65e0c;
   font-size: 1.98rem;
   font-weight: 700;
   line-height: 3rem;
   text-decoration: none;
 }
-.fourGearRegisterButton button{
-    border: 1px solid #B65E0C;
-    background-color: #ffffff;
+.fourGearRegisterButton button {
+  border: 1px solid #b65e0c;
+  background-color: #ffffff;
+}
+@media screen and (max-width: 650px) {
+  .fourGearSignin{
+    height:auto;
+    padding:5rem 0;
+  }
+  .fourGearSigninForm {
+    width: 30.06rem;
+    height: 26.9rem;
+  }
+  .fourGearSigninForm h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  .fourGearSigninFormContainer {
+    width: 27.54rem;
+  }
+  .fourGearSigninFormContainer input {
+    height: 3.27rem;
+    margin-bottom: 1.25rem;
+  }
+  .fourGearSigninForm button {
+    width: 22.011rem;
+    height: 3.183rem;
+    margin:0.75rem;
+  }
+  .fourGearSigninButton{
+    margin:unset;
+  }
+  .fourGearSigninButton button{
+    font-size: 1.5rem;
+  }
+  .bt-signin a {
+    font-size: 1.5rem;
+  }
+
 }
