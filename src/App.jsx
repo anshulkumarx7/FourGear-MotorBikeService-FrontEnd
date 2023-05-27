@@ -11,7 +11,7 @@ import FourGearWorks from "./Components/FourGearWorks";
 import Features from "./Components/Features";
 import Benefit from "./Components/Benefit";
 import CustomerSpeaks from "./Components/CustomerSpeaks";
-
+import Vision from "./Components/Vision";
 function App() {
   return (
     <div className="main">
@@ -26,6 +26,7 @@ function App() {
         <CustomerSpeaks />
         <Brands/>
         <Footer />
+        <Vision />
 
       </BrowserRouter>
     </div>
