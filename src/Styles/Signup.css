@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.fourGearSignUp {
+  width: 100vw;
+  max-width: 100%;
+  padding:4rem 0;
+  /* border: 2px solid black; */
+  background: linear-gradient(
+    359.39deg,
+    rgba(255, 255, 255, 0.44) -0.53%,
+    rgba(200, 97, 2, 0.31) 99.44%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearSignUpForm {
+  width: 47.3rem;
+  height: 54.2rem;
+  background-color: #ffffff;
+  border-radius: 4.05rem;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.fourGearSignUpForm h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #b65e0c;
+}
+.fourGearSignUpFormContainer {
+  width: 42.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.fourGearSignUpFormContainer input {
+  width: 100%;
+  height: 5.045rem;
+  padding: 0.5rem 0.5rem 0.5rem 2.8rem;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  background-color: #f2f2f2;
+  border-radius: 3.6rem;
+  border: none;
+}
+.fourGearSignUpForm button {
+  font-family: "Poppins", sans-serif;
+  width: 33.957rem;
+  height: 4.98rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 1.98rem;
+  font-weight: 700;
+  line-height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: auto 0;
+  margin-bottom: 2.5rem;
+}
+.fourGearSignupRegisterButton{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:1.5rem;
+}
+@media screen and (max-width: 650px){
+  .fourGearSignUp{
+    height:auto;
+    padding:5rem 0;
+  }
+  .fourGearSignUpForm {
+    width: 30.06rem;
+    height: 30.9rem;
+  }
+  .fourGearSignUpForm h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin:1.5rem 0;
+  }
+  .fourGearSignUpFormContainer {
+    width: 27.54rem;
+  }
+  .fourGearSignUpFormContainer input {
+    height: 3.27rem;
+    margin-bottom: 1.25rem;
+  }
+  .fourGearSignUpForm button {
+    width: 22.011rem;
+    height: 3.183rem;
+    margin:0.75rem;
+  }
+  .fourGearSignupRegisterButton{
+    margin:unset;
+  }
+  .fourGearSignupRegisterButton button{
+    font-size: 1.4rem;
+  }
+}

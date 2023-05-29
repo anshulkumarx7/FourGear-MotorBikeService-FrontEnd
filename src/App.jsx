@@ -14,6 +14,7 @@ import CustomerSpeaks from "./Components/CustomerSpeaks";
 import Vision from "./Components/Vision";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
+import Signup from "./Components/Signup";
 function App() {
   return (
     <div className="main">
@@ -31,6 +32,7 @@ function App() {
         <Contact />
         <Login />
         <Footer />
+        <Signup />
 
       </BrowserRouter>
     </div>
