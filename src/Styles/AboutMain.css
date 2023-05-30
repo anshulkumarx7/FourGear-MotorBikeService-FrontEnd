@@ -33,6 +33,7 @@
 .fourGearAboutMainContent img {
   max-width: 16.59vw;
   /* height: 60.47vh; */
+  height:100%;
 }
 .fourGearAboutMainContent-About{
   padding: 0 5rem;
@@ -42,4 +43,18 @@
   font-size: 1.45vw;
   line-height: 2.5vw;
   text-align: center;
+}
+@media screen and (max-width:600px) {
+  .fourGearAboutMainContent-About h3{
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+  }
+  .fourGearAboutMainContainer h1{
+    font-size:2rem;
+  }
+  .fourGearAboutMain{
+    padding:1rem 0;
+  }
+
+  
 }
