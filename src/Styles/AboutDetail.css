@@ -19,7 +19,7 @@
 }
 @media screen and (max-width:550px){
     .fourGearAboutDetail{
-        padding: 2rem 2rem;
+        padding: 0rem 2rem;
     }
     .fourGearAboutDetail h3{
         font-size: 0.718rem;

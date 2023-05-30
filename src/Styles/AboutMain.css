@@ -46,11 +46,11 @@
 }
 @media screen and (max-width:600px) {
   .fourGearAboutMainContent-About{
-    padding:unset;
+    padding:0 1rem;
   }
   .fourGearAboutMainContent-About h3{
-    font-size: 0.8rem;
-    line-height: 1.6rem;
+    font-size: 0.7rem;
+    line-height: 1.2rem;
   }
   .fourGearAboutMainContainer h1{
     font-size:2rem;
