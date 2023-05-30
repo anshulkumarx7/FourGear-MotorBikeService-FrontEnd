@@ -48,7 +48,7 @@ function Navbar() {
         <div className="fourGearNavbarContent" ref={navRef} >
           <NavLink to="/" onClick={hideNavbar}>Home</NavLink>
           <NavLink to="/about" onClick={hideNavbar}>About</NavLink>
-          <NavLink to="/services" onClick={hideNavbar}>Services</NavLink>
+          <NavLink to="/service" onClick={hideNavbar}>Services</NavLink>
           <NavLink to="/partner" onClick={hideNavbar}>Partner</NavLink>
           <NavLink to="/gallery" onClick={hideNavbar}>Gallery</NavLink>
           <NavLink to="/contact" onClick={hideNavbar}>Contact</NavLink>
