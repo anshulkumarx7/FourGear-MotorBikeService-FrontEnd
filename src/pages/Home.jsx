@@ -13,7 +13,8 @@ function Home() {
   return (
     <div>
       <Hero />
-      <BookService />
+      {/* <BookService /> */}
+      <Outlet />
       <Features />
       <Pickup30 />
       <FourGearWorks />

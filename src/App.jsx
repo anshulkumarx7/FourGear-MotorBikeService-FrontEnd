@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import BookService from "./Components/BookService";
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Pickup30 from "./Components/Pickup30";
 import Footer from "./Components/Footer";
 import Brands from "./Components/Brands";
@@ -44,16 +44,19 @@ function App() {
         <AboutDetail /> */}
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />}>
+            <Route path="/" element={<BookService />} />
+            <Route path="/location" element={<Location />} />
+          </Route>
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactL />} />
-          <Route path="/service" element={<Services />} />
+          <Route path="/service" element={<Services />}>
+            <Route path="/service" element={<BookService />} />
+            <Route path="/service/location" element={<Location />} />
+          </Route>
           <Route path="/signin" element={<Login />} />
-          <Route path="/location" element={<Location />} />
         </Routes>
         <Footer />
-        
-
       </BrowserRouter>
     </div>
   );

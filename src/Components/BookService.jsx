@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "../Styles/BookService.css";
 import IconsData from "../data/icons";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 function BookService() {
   const navigate =useNavigate();
+  const location =useLocation();
   const [bookServiceDetails, setBookServiceDetails] = useState({
     customerName: "",
     phoneNumber: "",
@@ -16,7 +17,12 @@ function BookService() {
     e.preventDefault();
     console.log("Hii i got clicked");
     console.log(bookServiceDetails);
-    navigate("/location");
+    if(location.pathname === '/'){
+      navigate("/location");
+    }
+    if(location.pathname === '/service'){
+      navigate("/service/location");
+    }
 
   }
   function handleChange(event) {
