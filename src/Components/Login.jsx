@@ -39,10 +39,10 @@ function Login() {
                 value={loginData.password}
               ></input>
               <div className="fourGearSigninButton bt-signin">
-                <button onSubmit={handleSubmit}>Book Now</button>
+                <button onSubmit={handleSubmit}>Login</button>
               </div>
               <div className="fourGearRegisterButton bt-signin">
-                <button ><Link to="/">Register</Link></button>
+              <Link to="/signup"><button>Register</button></Link>
               </div>
             </form>
           </div>

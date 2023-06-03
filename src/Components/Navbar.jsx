@@ -56,7 +56,7 @@ function Navbar() {
             <img src={Cross}></img>
           </button>
         </div>
-        <NavLink className="userLogo" to="/user">
+        <NavLink className="userLogo" to="/signin">
           <img src={UserLogo}></img>
         </NavLink>
         <button className="nav-btn open-button" onClick={showNavbar}>

@@ -55,6 +55,7 @@ function App() {
             <Route path="/service/location" element={<Location />} />
           </Route>
           <Route path="/signin" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
         <Footer />
       </BrowserRouter>
