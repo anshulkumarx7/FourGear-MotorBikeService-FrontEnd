@@ -21,6 +21,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import ContactL from "./pages/ContactL";
 import Services from "./pages/Services";
+import Location from "./Components/Location";
 function App() {
   return (
     <div className="main">
@@ -43,10 +44,12 @@ function App() {
         <AboutDetail /> */}
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactL />} />
           <Route path="/service" element={<Services />} />
+          <Route path="/signin" element={<Login />} />
+          <Route path="/location" element={<Location />} />
         </Routes>
         <Footer />
         

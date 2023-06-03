@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.fourGearLocation {
+  width: 100vw;
+  max-width: 100%;
+  padding:4rem 0;
+  /* border: 2px solid black; */
+  background: linear-gradient(
+    359.39deg,
+    rgba(255, 255, 255, 0.44) -0.53%,
+    rgba(200, 97, 2, 0.31) 99.44%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearLocationForm {
+  width: 47.3rem;
+  height: 47.2rem;
+  background-color: #ffffff;
+  border-radius: 4.05rem;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.fourGearLocationForm h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #b65e0c;
+}
+.fourGearLocationFormContainer {
+  width: 42.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.fourGearLocationFormContainer input {
+  width: 100%;
+  height: 5.045rem;
+  padding: 0.5rem 0.5rem 0.5rem 2.8rem;
+  font-size: 1.7rem;
+  margin-bottom: 3rem;
+  background-color: #f2f2f2;
+  border-radius: 3.6rem;
+  border: none;
+}
+.fourGearLocationForm button {
+  font-family: "Poppins", sans-serif;
+  width: 33.957rem;
+  height: 4.98rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 1.98rem;
+  font-weight: 700;
+  line-height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: auto 0;
+  margin-bottom: 1rem;
+}
+.fourGearLocationBookNowButton{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:1.5rem;
+}
+.registrationFormErrorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.7rem;
+}
+
+.registrationFormErrorMessage p {
+  margin-left: 0.5rem;
+  height: 1.3rem;
+  font-family: "Segoe UI";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  color: #f94545;
+}
+@media screen and (max-width: 650px){
+  .fourGearLocation{
+    height:auto;
+    padding:5rem 0;
+  }
+  .fourGearLocationForm {
+    width: 30.06rem;
+    height: 30.9rem;
+  }
+  .fourGearLocationForm h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin:1.5rem 0;
+  }
+  .fourGearLocationFormContainer {
+    width: 27.54rem;
+  }
+  .fourGearLocationFormContainer input {
+    height: 4.27rem;
+    margin-bottom: 2.5rem;
+  }
+  .fourGearLocationForm button {
+    width: 22.011rem;
+    height: 3.183rem;
+    margin:0.75rem;
+  }
+  .fourGearLocationBookNowButton{
+    margin:unset;
+  }
+  .fourGearLocationBookNowButton button{
+    font-size: 1.4rem;
+  }
+}
