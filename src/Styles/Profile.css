@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.fourGearProfile {
+  width: 100vw;
+  max-width: 100%;
+  /* height: 100vh; */
+  /* border: 2px solid black; */
+  background-color: #eeeeee;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fourGearProfile h1 {
+  font-weight: 700;
+  font-size: 2.5vw;
+  line-height: 2vw;
+  color: #b65e0c;
+  margin:3rem 0;
+}
+.fourGearProfileContainer {
+  width: 79.51vw;
+  height:30vw;
+  /* border: 2px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5rem 0;
+}
+.fourGearProfileDetails {
+  width: 21.59vw;
+  height: 100%;
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearProfileIcon {
+  width: 8vw;
+  height: 8vw;
+  background: #ee903a;
+  border: 0.6rem solid #eeeeee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
+
+}
+.fourGearProfileIcon img{
+    width:6.25vw;
+    height:5.76vw;
+}
+.fourGearProfileDetailsContainer {
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid red; */
+  background-color: #b65e0c;
+  /* margin-top: -5rem; */
+  border-radius: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* z-index: -1; */
+  text-align: center;
+}
+.fourGearProfileDetailsContainer h2 {
+  font-weight: 600;
+  font-size: 1.12vw;
+  line-height: 1.25vw;
+  color: #ffffff;
+  padding-bottom: 1rem;
+}
+.fourGearProfileDetailsContainer h4 {
+  font-weight: 400;
+  font-size: 0.97vw;
+  line-height: 1.66vw;
+  padding-bottom: 0.5rem;
+  color: #ffffff;
+}
+.fourGearServiceDetails {
+  width: 54.65vw;
+  height:100%;  
+  background-color: #ffffff;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 2.1rem;
+  /* padding:4rem 0; */
+  /* margin: 2rem 0;; */
+  
+}
+.fourGearServiceDetails h2 {
+  font-weight: 700;
+  font-size: 1.48vw;
+  line-height: 1.875vw;
+  color: #b65e0c;
+  text-align: center;
+  margin-top:1.5rem;
+  margin-bottom:3rem;
+}
+table{
+    width:80%;
+}
+.tableSn,.tableDate,.tableDetails,.tableAmount{
+    text-align: center;
+    padding:0.5rem;
+    font-size:1.11vw;
+    font-weight:500;
+
+}
+.tableSn{
+    width:40px;
+    text-align: center;
+    /* padding:1.5rem; */
+    font-size:1.11vw;
+    font-weight:500;
+}
+.tableDate{
+    width:20rem;
+}
+.bold{
+    font-weight:700;
+    font-size: 1.2vw;
+}
+

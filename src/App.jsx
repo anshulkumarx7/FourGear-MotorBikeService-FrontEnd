@@ -22,6 +22,7 @@ import About from "./pages/About";
 import ContactL from "./pages/ContactL";
 import Services from "./pages/Services";
 import Location from "./Components/Location";
+import Profile from "./Components/Profile";
 function App() {
   return (
     <div className="main">
@@ -56,6 +57,7 @@ function App() {
           </Route>
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </BrowserRouter>
