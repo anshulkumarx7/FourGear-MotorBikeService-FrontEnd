@@ -30,14 +30,14 @@
 }
 .fourGearFeatureContent h2 {
   font-weight: 700;
-  font-size: 3vw;
+  font-size: 2.5vw;
   line-height: 3.4vw;
   padding-bottom: 2rem;
   color: #b65e0c;
 }
 .fourGearFeatureContent p {
   font-weight: 400;
-  font-size: 1.7vw;
+  font-size: 1.3vw;
   line-height: 127.52%;
 }
 .fourGearFeatureInnerContainer {
@@ -61,11 +61,11 @@
 
 }
 .fourGearFeatureIconBox img{
-    max-width: 15.73vw;
+    max-width: 11.73vw;
 }
 .fourGearFeatureIconBox h3 {
   font-weight: 600;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   padding-top: 1.6vw;
   line-height: 127.52%;
 }
