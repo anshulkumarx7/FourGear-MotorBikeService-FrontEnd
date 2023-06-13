@@ -2,7 +2,7 @@
 .fourGearSignUp {
   width: 100vw;
   max-width: 100%;
-  padding:4rem 0;
+  padding: 4rem 0;
   /* border: 2px solid black; */
   background: linear-gradient(
     359.39deg,
@@ -40,10 +40,25 @@
   height: 5.045rem;
   padding: 0.5rem 0.5rem 0.5rem 2.8rem;
   font-size: 1.7rem;
-  margin-bottom: 2rem;
   background-color: #f2f2f2;
   border-radius: 3.6rem;
   border: none;
+}
+.signUpErrors {
+  color: red;
+  padding-left: 2.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.cgDanger {
+  color: red;
+  font-size: 1rem;
+  margin-right: 0.3rem;
+}
+.fourGearSignUpFormInput {
+  margin-bottom: 2rem;
 }
 .fourGearSignUpForm button {
   font-family: "Poppins", sans-serif;
@@ -60,48 +75,60 @@
   margin: auto 0;
   margin-bottom: 2.5rem;
 }
-.fourGearSignupRegisterButton{
-  display:flex;
+.fourGearSignupRegisterButton {
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-top:1.5rem;
+  margin-top: 1.5rem;
 }
-.fourGearSignupRegisterButton button{
+.fourGearSignupRegisterButton button {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@media screen and (max-width: 650px){
-  .fourGearSignUp{
-    height:auto;
-    padding:5rem 0;
+@media screen and (max-width: 650px) {
+  .fourGearSignUp {
+    height: auto;
+    padding: 5rem 0;
   }
   .fourGearSignUpForm {
     width: 30.06rem;
-    height: 30.9rem;
+    height:100%;
   }
   .fourGearSignUpForm h2 {
     font-size: 2rem;
     line-height: 2.4rem;
-    margin:1.5rem 0;
+    margin: 1.5rem 0;
   }
   .fourGearSignUpFormContainer {
     width: 27.54rem;
   }
   .fourGearSignUpFormContainer input {
     height: 3.27rem;
-    margin-bottom: 1.25rem;
+    /* margin-bottom: 1.25rem; */
+  }
+  .fourGearSignUpFormContainer input::placeholder {
+    font-size: 1.2rem;
+  }
+  .cgDanger {
+    font-size: 1rem;
+  }
+  .signUpErrors {
+    font-size: 1rem;
+  }
+  .fourGearSignUpFormInput {
+    margin-bottom: 1rem;
   }
   .fourGearSignUpForm button {
     width: 22.011rem;
     height: 3.183rem;
-    margin:0.75rem;
+    margin: 0.75rem;
+    margin-bottom: 1.3rem;
   }
-  .fourGearSignupRegisterButton{
-    margin:unset;
+  .fourGearSignupRegisterButton {
+    margin: unset;
   }
-  .fourGearSignupRegisterButton button{
+  .fourGearSignupRegisterButton button {
     font-size: 1.4rem;
   }
-  
 }
