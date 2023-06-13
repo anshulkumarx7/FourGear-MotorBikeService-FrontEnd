@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../Styles/Signup.css";
 import axios from "axios";
+import { ThreeDots } from "react-loader-spinner";
 function Signup() {
+  const [loading, setLoading] = useState(false);
   const [signupData, setSignupData] = useState({
     fname: "",
     lname: "",
@@ -15,12 +17,13 @@ function Signup() {
       [name]: value,
     }));
   }
-  const signup =async(config)=>{
-    try{
-      const response =await axios.request(config);
+  const signup = async (config) => {
+    try {
+      setLoading(true);
+      const response = await axios.request(config);
+      setLoading(false);
       console.log(JSON.stringify(response.data));
-    }
-    catch(error){
+    } catch (error) {
       console.log(error);
     }
   };
@@ -33,7 +36,7 @@ function Signup() {
       headers: {
         "Content-Type": "application/json",
       },
-      data:signupData,
+      data: signupData,
     };
     signup(config);
   }
@@ -70,7 +73,22 @@ function Signup() {
               value={signupData.password}
             ></input>
             <div className="fourGearSignupRegisterButton">
-              <button>Register</button>
+              <button>
+                {loading ? (
+                  <ThreeDots
+                    height="30"
+                    width="30"
+                    radius="9"
+                    color="#ffffff"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                  />
+                ) : (
+                  <>Register</>
+                )}
+              </button>
             </div>
           </form>
         </div>

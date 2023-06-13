@@ -72,6 +72,11 @@
   align-items: center;
   justify-content: center;
 }
+.bt-signin button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .bt-signin a {
   color: #b65e0c;
   font-size: 1.98rem;

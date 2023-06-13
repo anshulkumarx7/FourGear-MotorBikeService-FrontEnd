@@ -66,6 +66,11 @@
   justify-content: center;
   margin-top:1.5rem;
 }
+.fourGearSignupRegisterButton button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 650px){
   .fourGearSignUp{
     height:auto;
@@ -98,4 +103,5 @@
   .fourGearSignupRegisterButton button{
     font-size: 1.4rem;
   }
+  
 }

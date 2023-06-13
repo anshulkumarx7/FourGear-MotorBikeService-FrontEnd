@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { ThreeDots } from "react-loader-spinner";
 import "../Styles/Login.css";
 import axios from "axios";
-// const axios = require("axios");
-// let data = JSON.stringify({
-//   "email": "adityasubham03@gmail.com",
-//   "password": "27Adich@"
-// });
-
-
 function Login() {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
-  const [error,setError]=useState('');
+  const [error, setError] = useState("");
   function handleChange(event) {
     const { name, value } = event.target;
     setLoginData((prevValue) => ({
@@ -33,17 +28,20 @@ function Login() {
     },
     data: loginData,
   };
-  function handleSubmit(e){
+  const login = async (config) => {
+    try {
+      setLoading(true);
+      const response = await axios.request(config);
+      setLoading(false);
+      console.log(JSON.stringify(response.data));
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  function handleSubmit(e) {
     e.preventDefault();
-    axios.request(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(error);
-      });
+    login(config);
   }
   return (
     <div className="fourGearSignin">
@@ -67,7 +65,22 @@ function Login() {
             ></input>
             {error && <h1>ERROR</h1>}
             <div className="fourGearSigninButton bt-signin">
-              <button onSubmit={handleSubmit}>Login</button>
+              <button onSubmit={handleSubmit}>
+                {loading ? (
+                  <ThreeDots
+                    height="30"
+                    width="30"
+                    radius="9"
+                    color="#ffffff"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                  />
+                ) : (
+                  <>Login</>
+                )}
+              </button>
             </div>
             <div className="fourGearRegisterButton bt-signin">
               <Link to="/signup">
