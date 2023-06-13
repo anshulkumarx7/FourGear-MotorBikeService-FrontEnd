@@ -12,14 +12,8 @@ import Cross from "../assets/cross.svg";
 import Bars from "../assets/bars.svg";
 function Navbar() {
   const navRef = useRef();
-  const removeTransitionRef=useRef();
-
   function showNavbar() {
     navRef.current.classList.toggle("responsive_nav");
-  }
-  function hideNavbar(){
-    navRef.current.classList.remove("responsive_nav");
-    removeTransitionRef.current.classList.add("remove_transition");
   }
   return (
     <div id="fourGearNavbar">
@@ -46,12 +40,12 @@ function Navbar() {
       <div className="fourGearNavbarMain" >
         <img className="mainLogo" src={FourgearLogo}></img>
         <div className="fourGearNavbarContent" ref={navRef} >
-          <NavLink to="/" onClick={hideNavbar}>Home</NavLink>
-          <NavLink to="/about" onClick={hideNavbar}>About</NavLink>
-          <NavLink to="/service" onClick={hideNavbar}>Services</NavLink>
-          <NavLink to="/partner" onClick={hideNavbar}>Partner</NavLink>
-          <NavLink to="/gallery" onClick={hideNavbar}>Gallery</NavLink>
-          <NavLink to="/contact" onClick={hideNavbar}>Contact</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about" >About</NavLink>
+          <NavLink to="/service" >Services</NavLink>
+          <NavLink to="/partner" >Partner</NavLink>
+          <NavLink to="/gallery" >Gallery</NavLink>
+          <NavLink to="/contact" >Contact</NavLink>
           <button className="nav-btn close-button" onClick={showNavbar}>
             <img src={Cross}></img>
           </button>

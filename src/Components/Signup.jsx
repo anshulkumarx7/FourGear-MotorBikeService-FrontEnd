@@ -1,65 +1,82 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import "../Styles/Signup.css";
+import axios from "axios";
 function Signup() {
-  const [signupData,setSignupData]=useState({
-    firstName:"",
-    lastName:"",
-    email:"",
-    password:""
+  const [signupData, setSignupData] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    password: "",
   });
-  function handleChange(event){
-    const {name,value}=event.target;
-    setSignupData((prevValue)=>({
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setSignupData((prevValue) => ({
       ...prevValue,
-      [name]:value
-    }))
+      [name]: value,
+    }));
   }
-  function handleSubmit(e){
+  const signup =async(config)=>{
+    try{
+      const response =await axios.request(config);
+      console.log(JSON.stringify(response.data));
+    }
+    catch(error){
+      console.log(error);
+    }
+  };
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log("clicked");
-    console.log(signupData);
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "http://localhost:5000/api/auth/register",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data:signupData,
+    };
+    signup(config);
   }
   return (
-    
-    <div className='fourGearSignUp'>
-        <div className='fourGearSignUpForm'>
+    <div className="fourGearSignUp">
+      <div className="fourGearSignUpForm">
         <h2>SignUp</h2>
-          <div className="fourGearSignUpFormContainer">
-            <form onSubmit={handleSubmit}>
-              <input
-                name="firstName"
-                placeholder="First Name"
-                onChange={handleChange}
-                value={signupData.firstName}
-              ></input>
-              <input
-                name="lastName"
-                placeholder="Last Name"
-                onChange={handleChange}
-                value={signupData.lastName}
-              ></input>
-              <input
-                name="email"
-                type='email'
-                placeholder="E-mail"
-                onChange={handleChange}
-                value={signupData.email}
-              ></input>
-              <input
-                name="password"
-                type='password'
-                placeholder="Password"
-                onChange={handleChange}
-                value={signupData.password}
-              ></input>
-              <div className="fourGearSignupRegisterButton">
-                <button>Register</button>
-              </div>
-            </form>
-          </div>
+        <div className="fourGearSignUpFormContainer">
+          <form onSubmit={handleSubmit}>
+            <input
+              name="fname"
+              placeholder="First Name"
+              onChange={handleChange}
+              value={signupData.firstName}
+            ></input>
+            <input
+              name="lname"
+              placeholder="Last Name"
+              onChange={handleChange}
+              value={signupData.lastName}
+            ></input>
+            <input
+              name="email"
+              type="email"
+              placeholder="E-mail"
+              onChange={handleChange}
+              value={signupData.email}
+            ></input>
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+              value={signupData.password}
+            ></input>
+            <div className="fourGearSignupRegisterButton">
+              <button>Register</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;
