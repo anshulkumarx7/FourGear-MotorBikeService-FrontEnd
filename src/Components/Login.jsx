@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
+import { CgDanger } from "react-icons/cg";
 import "../Styles/Login.css";
+import loginValidation from "../schemas/loginValidation";
 import axios from "axios";
 function Login() {
   const navigate = useNavigate();
@@ -11,13 +13,14 @@ function Login() {
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
   function handleChange(event) {
     const { name, value } = event.target;
     setLoginData((prevValue) => ({
       ...prevValue,
       [name]: value,
     }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   }
   let config = {
     method: "post",
@@ -27,6 +30,17 @@ function Login() {
       "Content-Type": "application/json",
     },
     data: loginData,
+  };
+  const handleBlur = (event) => {
+    const { name } = event.target;
+    try {
+      loginValidation.validateSyncAt(name, loginData);
+    } catch (validationError) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: validationError.message,
+      }));
+    }
   };
   const login = async (config) => {
     try {
@@ -39,31 +53,63 @@ function Login() {
       console.log(error);
     }
   };
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(config);
-  }
+    try {
+      setLoading(true);
+      await loginValidation.validate(loginData, { abortEarly: false });
+      setLoading(false);
+      login(config);
+    } catch (validationError) {
+      setLoading(false);
+      console.log(validationError);
+      const newErrors = {};
+      validationError.inner.forEach((error) => {
+        newErrors[error.path] = error.message;
+      });
+      setErrors(newErrors);
+    }
+  };
   return (
     <div className="fourGearSignin">
       <div className="fourGearSigninForm">
         <h2>Login</h2>
         <div className="fourGearSigninFormContainer">
           <form onSubmit={handleSubmit}>
-            <input
-              name="email"
-              type="email"
-              placeholder="E-mail"
-              onChange={handleChange}
-              value={loginData.email}
-            ></input>
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={handleChange}
-              value={loginData.password}
-            ></input>
-            {error && <h1>ERROR</h1>}
+            <div className="fourgearLoginFormInput">
+              <input
+                name="email"
+                type="email"
+                placeholder="E-mail"
+                onBlur={handleBlur}
+                autoComplete="off"
+                onChange={handleChange}
+                value={loginData.email}
+              ></input>
+              {errors.email && (
+                <div className="loginErrors">
+                  <CgDanger className="cgDanger" />
+                  {errors.email}
+                </div>
+              )}
+            </div>
+            <div className="fourgearLoginFormInput">
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                autoComplete="off"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={loginData.password}
+              ></input>
+              {errors.password && (
+                <div className="loginErrors">
+                  <CgDanger className="cgDanger" />
+                  {errors.password}
+                </div>
+              )}
+            </div>
             <div className="fourGearSigninButton bt-signin">
               <button onSubmit={handleSubmit}>
                 {loading ? (

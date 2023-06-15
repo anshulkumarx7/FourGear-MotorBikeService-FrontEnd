@@ -4,6 +4,7 @@ import axios from "axios";
 import { CgDanger } from "react-icons/cg";
 import { ThreeDots } from "react-loader-spinner";
 import signUpValidation from "../schemas/signupValidation";
+import loginValidation from "../schemas/loginValidation";
 function Signup() {
   const [loading, setLoading] = useState(false);
   const [signupData, setSignupData] = useState({
@@ -65,7 +66,6 @@ function Signup() {
       validationError.inner.forEach((error) => {
         newErrors[error.path] = error.message;
       });
-
       setErrors(newErrors);
     }
   };

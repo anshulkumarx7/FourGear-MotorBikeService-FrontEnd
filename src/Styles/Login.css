@@ -41,7 +41,6 @@
   height: 5.045rem;
   padding: 0.5rem 0.5rem 0.5rem 2.8rem;
   font-size: 1vw;
-  margin-bottom: 2rem;
   background-color: #f2f2f2;
   border-radius: 3.6rem;
   border: none;
@@ -89,6 +88,22 @@
   background-color: #ffffff;
   color:#b65e0c;
 }
+.loginErrors {
+  color: red;
+  padding-left: 2.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.cgDanger {
+  color: red;
+  font-size: 1rem;
+  margin-right: 0.3rem;
+}
+.fourgearLoginFormInput {
+  margin-bottom: 2rem;
+}
 @media (min-width:651px) and (max-width:1000px) {
   .fourGearSigninForm h2{
     font-size: 2.5rem;
@@ -123,7 +138,6 @@
   }
   .fourGearSigninFormContainer input {
     height: 3.27rem;
-    margin-bottom: 1.25rem;
     font-size:1rem;
   }
   .fourGearSigninForm button {
@@ -142,6 +156,15 @@
   }
   .bt-signin a {
     font-size: 1.5rem;
+  }
+  .cgDanger {
+    font-size: 1rem;
+  }
+  .loginErrors {
+    font-size: 1rem;
+  }
+  .fourgearLoginFormInput {
+    margin-bottom: 1rem;
   }
 
 }
