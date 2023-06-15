@@ -61,7 +61,7 @@
 .fourBookServiceBox {
   width: 11.59vw;
   /* height: 22.083vh; */
-  height:15.9rem;
+  height:13rem;
   background-color: #d8d3d3;
   border-radius: 1.6rem;
   display: flex;
@@ -96,12 +96,12 @@
   font-size: 2vw;
   line-height: 2.3vw;
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 0;
   color: var(--primary-color);
 }
 .fourGearBookServiceFormContainer {
   width: 26.32vw;
-  height: auto;
+  height:100%;
   /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
@@ -129,7 +129,7 @@ select {
 .fourGearBookServiceForm button {
   font-family: "Poppins", sans-serif;
   width: 23.82vw;
-  height: 6.95vh;
+  height:3.5rem;
   background-color: var(--primary-color);
   color: #ffffff;
   font-size: 1.38vw;
