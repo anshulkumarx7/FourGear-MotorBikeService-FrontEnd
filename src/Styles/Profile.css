@@ -127,7 +127,7 @@
 @media screen and (max-width:550px) {
   .fourGearProfile{
     /* height:95vh; */
-    padding:7rem 0;
+    /* padding:7rem 0; */
   }
   .fourGearProfileDetailsContainer h2{
     font-size: 1.2rem;
