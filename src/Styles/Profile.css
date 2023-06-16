@@ -125,6 +125,10 @@
     font-size: 1.2vw;
 }
 @media screen and (max-width:550px) {
+  .fourGearProfile{
+    /* height:95vh; */
+    padding:9rem 0;
+  }
   .fourGearProfileDetailsContainer h2{
     font-size: 1.2rem;
     font-weight: 600;
@@ -142,6 +146,7 @@
   }
   .fourGearServiceDetails h2{
     font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   .tableSn,.tableDate,.tableDetails,.tableAmount{
     font-size: 0.8rem;
@@ -156,7 +161,8 @@
 
 @media screen and (max-width:400px) {
   .fourGearServiceDetails{
-    width:35rem;
+    width:34rem;
   }
+  
   
 }
