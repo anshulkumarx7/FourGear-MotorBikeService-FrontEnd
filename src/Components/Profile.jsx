@@ -1,10 +1,14 @@
 import React from "react";
 import "../Styles/Profile.css";
 import ProfileIcon from "../assets/profile.svg";
+import ShopIcon from "../assets/customer.svg";
+import MobileIcon from "../assets/mobile.svg";
+import AmountIcon from "../assets/id.svg";
+import StatusIcon from "../assets/statussvg.svg";
 function Profile() {
   return (
     <div className="fourGearProfile">
-      <h1>USER DASHBOARD</h1>
+      {/* <h1>USER DASHBOARD</h1> */}
       <div className="fourGearProfileContainer">
         <div className="fourGearProfileDetails">
           <div className="fourGearProfileDetailsContainer">
@@ -22,15 +26,15 @@ function Profile() {
           <h2>RECENT SERVICES</h2>
           <table>
             <tr>
-              <th className="tableSn bold">S.N</th>
-              <th className="tableDate bold">Date</th>
-              <th className="tableDetails bold">Details</th>
-              <th className="tableAmount bold">Amount</th>
+              <th className="tableSn bold"><img src={ShopIcon} alt="" /><>Shop Name</></th>
+              <th className="tableDate bold"><img src={MobileIcon} alt="" /> <>Date</></th>
+              <th className="tableDetails bold"><img src={StatusIcon} alt="" /> <>Status</></th>
+              <th className="tableAmount bold"><img src={AmountIcon} alt="" /><>Amount</></th>
             </tr>
             <tr>
-              <td className="tableSn">1</td>
+              <td className="tableSn">New Rajiv Garage</td>
               <td className="tableDate">19 Apr 2019</td>
-              <td className="tableDetails">Wheel Change</td>
+              <td className="tableDetails">Confirmed</td>
               <td className="tableAmount">5000</td>
             </tr>
             <tr>
@@ -47,6 +51,12 @@ function Profile() {
             </tr>
             <tr>
               <td className="tableSn">4</td>
+              <td className="tableDate">19 Apr 2019</td>
+              <td className="tableDetails">Wheel Change</td>
+              <td className="tableAmount">5000</td>
+            </tr>
+            <tr>
+              <td className="tableSn">5</td>
               <td className="tableDate">19 Apr 2019</td>
               <td className="tableDetails">Wheel Change</td>
               <td className="tableAmount">5000</td>
