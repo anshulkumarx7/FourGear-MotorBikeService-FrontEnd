@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../Styles/BookService.css";
 import IconsData from "../data/icons";
 import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 function BookService() {
   const navigate =useNavigate();
   const location =useLocation();
+  const {logout} =useContext(AuthContext);
   const [bookServiceDetails, setBookServiceDetails] = useState({
     customerName: "",
     phoneNumber: "",
@@ -23,6 +25,10 @@ function BookService() {
     if(location.pathname === '/service'){
       navigate("/service/location");
     }
+
+  }
+  const handleLogout =()=>{
+    logout();
 
   }
   function handleChange(event) {
@@ -109,6 +115,7 @@ function BookService() {
           </div>
         </div>
       </div>
+      <button onClick={handleLogout}>logout</button>
     </div>
   );
 }

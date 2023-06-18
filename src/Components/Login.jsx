@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
@@ -6,13 +6,15 @@ import { CgDanger } from "react-icons/cg";
 import "../Styles/Login.css";
 import loginValidation from "../schemas/loginValidation";
 import axios from "axios";
+import { AuthContext } from '../Context/AuthContext';
 function Login() {
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
-  });
+  // const navigate = useNavigate();
+  // const [loading, setLoading] = useState(false);
+  // const [loginData, setLoginData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+  const { isLoggedIn,setLoading,loading,loginData,setLoginData, login} = useContext(AuthContext);
   const [errors, setErrors] = useState({});
   function handleChange(event) {
     const { name, value } = event.target;
@@ -42,17 +44,17 @@ function Login() {
       }));
     }
   };
-  const login = async (config) => {
-    try {
-      setLoading(true);
-      const response = await axios.request(config);
-      setLoading(false);
-      console.log(JSON.stringify(response.data));
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const login = async (config) => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await axios.request(config);
+  //     setLoading(false);
+  //     console.log(JSON.stringify(response.data));
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -70,6 +72,7 @@ function Login() {
       setErrors(newErrors);
     }
   };
+  console.log(isLoggedIn);
   return (
     <div className="fourGearSignin">
       <div className="fourGearSigninForm">
