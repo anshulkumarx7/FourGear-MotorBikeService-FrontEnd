@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 // Create the authentication context
 export const AuthContext = createContext();
@@ -10,21 +10,13 @@ export const AuthProvider = ({ children }) => {
   const [accessToken, setAccessToken] = useState(null);
   const [refreshToken, setRefreshToken] = useState(null);
   const [tokenExpiration, setTokenExpiration] = useState(0);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
-  // let config = {
-  //   method: "post",
-  //   maxBodyLength: Infinity,
-  //   url: "http://localhost:5000/api/auth/login",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   data: loginData,
-  // };
+
   let configRegenerateToken = {
     method: 'get',
     maxBodyLength: Infinity,
@@ -56,9 +48,6 @@ export const AuthProvider = ({ children }) => {
         console.log("Hello");
         regenerateToken(configRegenerateToken);
       }
-      else{
-        // console.log("Cancelled");
-      }
     };
     // Check expiration every second
     const tokenExpirationTimer = setInterval(checkTokenExpiration, 1000); 
@@ -66,20 +55,19 @@ export const AuthProvider = ({ children }) => {
       clearInterval(tokenExpirationTimer);
     };
   }, [tokenExpiration]);
-  
+
+  //regenerateToken
+
   const regenerateToken = async(configRegenerateToken) => {
     try{
         console.log('Regenerating')
         const response = await axios.request(configRegenerateToken);
         console.log(response);
         const newAccessToken = response.data.token;
-        // const newExpiration = response.data.expiresIn;
-        // const newExpiry = response.data.expiresIn;
-        // const newExpiration=parseInt(newExpiry);
-        // console.log(newExpiration);
 
         localStorage.setItem('accessToken', newAccessToken);
         localStorage.setItem('tokenExpiration', Date.now() / 1000 + 20);
+        
 
         setAccessToken(newAccessToken);
         setTokenExpiration(Date.now() / 1000 + 20);
@@ -87,76 +75,46 @@ export const AuthProvider = ({ children }) => {
         console.error('Token regeneration failed', error);
         logout(); // Logout if token regeneration fails
     }
-    // axios
-    //   .post('/api/refresh', { refreshToken })
-    //   .then(response => {
-    //     const newAccessToken = response.data.accessToken;
-    //     const newExpiration = response.data.expiresIn;
-
-    //     localStorage.setItem('accessToken', newAccessToken);
-    //     localStorage.setItem('tokenExpiration', newExpiration);
-
-    //     setAccessToken(newAccessToken);
-    //     setTokenExpiration(Number(newExpiration));
-    //   })
-    //   .catch(error => {
-    //     console.error('Token regeneration failed', error);
-    //     logout(); // Logout if token regeneration fails
-    //   });
   };
 
+  //login 
+  const [loginError,setLoginError]=useState("");
   const login = async(config) => {
     try {
         setLoading(true);
         const response = await axios.request(config);
         const accessToken = response.data.token;
         const refreshToken = response.data.refreshToken;
-        // const expires = response.data.expiresIn;
-        // const expiration=parseInt(expires);
+
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem('refreshToken', refreshToken);
         localStorage.setItem('tokenExpiration', Date.now() / 1000 + 20);
 
         setAccessToken(accessToken);
-        // console.log(accessToken);
-        // console.log(expiration);
+
         setRefreshToken(refreshToken);
-        // console.log(refreshToken);
-        // console.log(parseInt(expiration));
+
         setTokenExpiration(Date.now() / 1000 + 20);
-        // console.log("Token expiration");
-        // let a=localStorage.getItem(tokenExpiration);
-        // console.log(a);
+
         console.log(tokenExpiration);
         setIsLoggedIn(true);
         setLoading(false);
         console.log(JSON.stringify(response.data));
-        // navigate("/");
+        console.log("navigate");
+        navigate("/profile");
+        console.log("navigated");
+        
+   
+        setLoginError("");
+
       } catch (error) {
         console.log(error);
+        setLoginError(error.response.data.message);
         setIsLoggedIn(false);
+        setLoading(false);
       }
-    // axios
-    //   .post('/api/login', { username, password })
-    //   .then(response => {
-    //     const accessToken = response.data.accessToken;
-    //     const refreshToken = response.data.refreshToken;
-    //     const expiration = response.data.expiresIn;
-
-    //     localStorage.setItem('accessToken', accessToken);
-    //     localStorage.setItem('refreshToken', refreshToken);
-    //     localStorage.setItem('tokenExpiration', expiration);
-
-    //     setAccessToken(accessToken);
-    //     setRefreshToken(refreshToken);
-    //     setTokenExpiration(Number(expiration));
-    //     setIsLoggedIn(true);
-    //   })
-    //   .catch(error => {
-    //     console.error('Login failed', error);
-    //   });
   };
-
+//logout
   const logout = () => {
     setIsLoggedIn(false);
     setAccessToken(null);
@@ -170,7 +128,7 @@ export const AuthProvider = ({ children }) => {
   };
 
 return (
-    <AuthContext.Provider value={{ isLoggedIn,logout,loading,setLoading,loginData,setLoginData,login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn,logout,loading,setLoading,loginData,setLoginData,login,loginError,regenerateToken}}>
       {children}
     </AuthContext.Provider>
   );

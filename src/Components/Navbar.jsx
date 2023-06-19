@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import "../Styles/Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import FacebookLogo from "../assets/facebook 1.svg";
@@ -10,8 +10,10 @@ import FourgearLogo from "../assets/lopgo 1.svg";
 import UserLogo from "../assets/user-circle 1.svg";
 import Cross from "../assets/cross.svg";
 import Bars from "../assets/bars.svg";
+import { AuthContext } from "../Context/AuthContext";
 function Navbar() {
   const navRef = useRef();
+  const { isLoggedIn }=useContext(AuthContext);
   function showNavbar() {
     navRef.current.classList.toggle("responsive_nav");
   }
@@ -49,11 +51,13 @@ function Navbar() {
           <NavLink to="/partner" onClick={hideNavbar}>Partner</NavLink>
           <NavLink to="/gallery" onClick={hideNavbar}>Gallery</NavLink>
           <NavLink to="/contact" onClick={hideNavbar}>Contact</NavLink>
+          <NavLink className="profileLinkNavbar" to={isLoggedIn ? "/profile":"/signin"} onClick={hideNavbar}>{isLoggedIn ? "Profile" : "Login"}</NavLink>
+          <NavLink  className="createAccountLinkNavbar" to={isLoggedIn ? "":"/signup"} onClick={hideNavbar}>{isLoggedIn ? "" : "Create Account"}</NavLink>
           <button className="nav-btn close-button" onClick={showNavbar}>
             <img src={Cross}></img>
           </button>
         </div>
-        <NavLink className="userLogo" to="/signin">
+        <NavLink className="userLogo" to={isLoggedIn ? "/profile":"/signin"}>
           <img src={UserLogo}></img>
         </NavLink>
         <button className="nav-btn open-button" onClick={showNavbar}>

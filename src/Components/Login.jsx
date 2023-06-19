@@ -5,16 +5,10 @@ import { ThreeDots } from "react-loader-spinner";
 import { CgDanger } from "react-icons/cg";
 import "../Styles/Login.css";
 import loginValidation from "../schemas/loginValidation";
-import axios from "axios";
 import { AuthContext } from '../Context/AuthContext';
 function Login() {
-  // const navigate = useNavigate();
-  // const [loading, setLoading] = useState(false);
-  // const [loginData, setLoginData] = useState({
-  //   email: "",
-  //   password: "",
-  // });
-  const { isLoggedIn,setLoading,loading,loginData,setLoginData, login} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { isLoggedIn,setLoading,loading,loginData,setLoginData, login,loginError} = useContext(AuthContext);
   const [errors, setErrors] = useState({});
   function handleChange(event) {
     const { name, value } = event.target;
@@ -33,6 +27,7 @@ function Login() {
     },
     data: loginData,
   };
+  //  handleBlur function
   const handleBlur = (event) => {
     const { name } = event.target;
     try {
@@ -44,17 +39,7 @@ function Login() {
       }));
     }
   };
-  // const login = async (config) => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await axios.request(config);
-  //     setLoading(false);
-  //     console.log(JSON.stringify(response.data));
-  //     navigate("/");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  // handleSubmit Function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -62,6 +47,12 @@ function Login() {
       await loginValidation.validate(loginData, { abortEarly: false });
       setLoading(false);
       login(config);
+      // console.log("checking");
+      // console.log(isLoggedIn);
+      // if(isLoggedIn){
+      //   console.log('nscjcne');
+      //   navigate('/profile');
+      // } 
     } catch (validationError) {
       setLoading(false);
       console.log(validationError);
@@ -73,6 +64,8 @@ function Login() {
     }
   };
   console.log(isLoggedIn);
+  console.log(loginError);
+
   return (
     <div className="fourGearSignin">
       <div className="fourGearSigninForm">
@@ -110,6 +103,13 @@ function Login() {
                 <div className="loginErrors">
                   <CgDanger className="cgDanger" />
                   {errors.password}
+                </div>
+              )}
+              {/* For invalid password */}
+              {(loginError && !errors.password) && (
+                <div className="loginErrors">
+                  <CgDanger className="cgDanger" />
+                  {loginError}
                 </div>
               )}
             </div>
