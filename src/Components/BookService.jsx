@@ -4,7 +4,7 @@ import IconsData from "../data/icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 function BookService() {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
   const location =useLocation();
   const {logout} =useContext(AuthContext);
   const [bookServiceDetails, setBookServiceDetails] = useState({

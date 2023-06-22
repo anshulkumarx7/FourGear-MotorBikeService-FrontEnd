@@ -7,7 +7,7 @@ import "../Styles/Login.css";
 import loginValidation from "../schemas/loginValidation";
 import { AuthContext } from '../Context/AuthContext';
 function Login() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { isLoggedIn,setLoading,loading,loginData,setLoginData, login,loginError} = useContext(AuthContext);
   const [errors, setErrors] = useState({});
   function handleChange(event) {
@@ -47,12 +47,6 @@ function Login() {
       await loginValidation.validate(loginData, { abortEarly: false });
       setLoading(false);
       login(config);
-      // console.log("checking");
-      // console.log(isLoggedIn);
-      // if(isLoggedIn){
-      //   console.log('nscjcne');
-      //   navigate('/profile');
-      // } 
     } catch (validationError) {
       setLoading(false);
       console.log(validationError);

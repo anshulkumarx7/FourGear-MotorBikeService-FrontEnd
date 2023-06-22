@@ -10,7 +10,7 @@ const signUpValidation = Yup.object().shape({
     .required("Password is required")
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      " Password must be at least 8 characters long and contain [A-Z,a-z,@#]"
+      " Password must contain [A-Z,a-z,@#]"
     ),
 });
 export default signUpValidation;
