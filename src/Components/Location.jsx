@@ -60,16 +60,17 @@ function Location() {
       ...prevValue,
       [name]: value,
     }));
+    setBookServiceDetails((prevBookingDetails)=>({
+      ...prevBookingDetails,
+      "map":map,
+      "address":address
+    }))
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   }
   const booking =async(config)=>{
     try{
       setLoading(true);
-      setBookServiceDetails((prevBookingDetails)=>({
-        ...prevBookingDetails,
-        "map":map,
-        "address":address
-      }))
+      
       console.log(bookServiceDetails);
       // console.log(address);
       const response = await axios.request(config);
@@ -87,6 +88,7 @@ function Location() {
     console.log(map);
     try {
       // setLoading(true);
+      
       await locationValidation.validate(address, {
         abortEarly: false,
       });
