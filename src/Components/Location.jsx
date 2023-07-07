@@ -1,21 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import "../Styles/Location.css";
+import { ThreeDots } from "react-loader-spinner";
+import { CgDanger } from "react-icons/cg";
+import { AuthContext } from "../Context/AuthContext";
+import locationValidation from "../schemas/locationValidation";
+import { BookingContext } from "../Context/bookingContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function Location() {
+  const { setLoading, loading} = useContext(AuthContext);
+  const {bookServiceDetails,setBookServiceDetails}=useContext(BookingContext);
+  const [errors, setErrors] = useState({});
+  const navigate=useNavigate();
   const [address, setAddress] = useState({
-    address1: "",
-    address2: "",
+    address: "",
+    street: "",
+    landmark: "",
   });
-  const [currLocation, setCurrLocation] = useState({
+  const [map, setmap] = useState({
     latitude: "",
     longitude: "",
   });
+  
+  let config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'http://localhost:5000/api/book/bike',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : bookServiceDetails
+  };
+  const handleBlur = (event) => {
+    const { name } = event.target;
+    try {
+      locationValidation.validateSyncAt(name, address);
+    } catch (validationError) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: validationError.message,
+      }));
+    }
+  };
   useEffect(() => {
     getLocation();
   }, []);
   const getLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
-      setCurrLocation({
+      setmap({
         latitude: latitude,
         longitude: longitude,
       });
@@ -27,31 +60,102 @@ function Location() {
       ...prevValue,
       [name]: value,
     }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   }
-  function handleSubmit(e) {
+  const booking =async(config)=>{
+    try{
+      setLoading(true);
+      setBookServiceDetails((prevBookingDetails)=>({
+        ...prevBookingDetails,
+        "map":map,
+        "address":address
+      }))
+      console.log(bookServiceDetails);
+      // console.log(address);
+      const response = await axios.request(config);
+      console.log(JSON.stringify(response.data));
+      alert(response.data.message);
+      navigate("/");
+      setLoading(false);
+    }catch(error){
+      console.log(error);
+    }
+  }
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(address);
-    console.log(currLocation);
-  }
+    console.log(map);
+    try {
+      // setLoading(true);
+      await locationValidation.validate(address, {
+        abortEarly: false,
+      });
+      booking(config);
+      
+      // setLoading(false);
+    } catch (validationError) {
+      setLoading(false);
+      console.log(validationError);
+      const newErrors = {};
+      validationError.inner.forEach((error) => {
+        newErrors[error.path] = error.message;
+      });
+      setErrors(newErrors);
+    }
+  };
   return (
     <div className="fourGearLocation">
       <div className="fourGearLocationForm">
         <h2>Location Details</h2>
         <div className="fourGearLocationFormContainer">
           <form>
-            <input
-              name="address1"
-              placeholder="Address Line 1"
-              onChange={handleChange}
-              value={address.address1}
-            ></input>
-            <input
-              name="address2"
-              placeholder="Address Line 2"
-              onChange={handleChange}
-              value={address.address2}
-            ></input>
-            {currLocation.latitude === "" && (
+            <div className="locationBox">
+              <input
+                name="street"
+                placeholder="Street"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={address.street}
+              ></input>
+              {errors.street && (
+                  <div className="locationErrors">
+                    <CgDanger className="cgDanger" />
+                    {errors.street}
+                  </div>
+                )}   
+            </div>
+            <div className="locationBox">
+              <input
+                name="landmark"
+                placeholder="Landmark"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={address.landmark}
+              ></input>
+              {errors.landmark && (
+                  <div className="locationErrors">
+                    <CgDanger className="cgDanger" />
+                    {errors.landmark}
+                  </div>
+                )}   
+            </div>
+            <div className="locationBox">
+              <input
+                name="address"
+                placeholder="Full Address"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={address.address}
+              ></input>
+              {errors.address && (
+                  <div className="locationErrors">
+                    <CgDanger className="cgDanger" />
+                    {errors.address}
+                  </div>
+                )}   
+            </div>
+
+            {/* {map.latitude === "" && (
               <div className="registrationFormErrorMessage">
                 <svg
                   width="15"
@@ -67,10 +171,24 @@ function Location() {
                 </svg>
                 <p>Please allow access to location</p>
               </div>
-            )}
+            )} */}
 
             <div className="fourGearLocationBookNowButton">
-              <button onClick={handleSubmit}>BookNow</button>
+              <button onClick={handleSubmit}>
+              {loading ? (
+                  <ThreeDots
+                    height="30"
+                    width="30"
+                    radius="9"
+                    color="#ffffff"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                  />
+                ) : (
+                  <>Book Now</>
+                )}</button>
             </div>
           </form>
         </div>
