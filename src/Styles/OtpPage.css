@@ -1,0 +1,109 @@
+.fourGearOtp {
+  width: 100vw;
+  max-width: 100%;
+  height: 90vh;
+  background: linear-gradient(
+    359.39deg,
+    rgba(255, 255, 255, 0.44) -0.53%,
+    rgba(200, 97, 2, 0.31) 99.44%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.fourGearOtpContainer {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 69.444vw;
+  text-align: center;
+}
+.fourGearOtpContainer h2 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  font-size: 2rem;
+  color: #b65e0c;
+  padding-bottom: 1rem;
+}
+.fourGearOtpContainer p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+.code-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+.code {
+  caret-color: transparent;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  border: 1px solid #eee;
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
+  width: 75px;
+  height: 80px;
+  margin: 10px;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .code-container {
+    flex-wrap: wrap;
+  }
+  .code {
+    font-size:2rem;
+    height: 40px;
+    width: 28px;
+    font-size: bold;
+  }
+  .fourGearOtpContainer h2{
+    font-size: 1.8rem;
+  }
+  .fourGearOtpContainer p{
+    font-size: 1.3rem;
+  }
+  .code-container{
+    margin:1rem 0;
+  }
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.code:valid {
+  border-color: orange;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+  font-family: "Lato", sans-serif;
+  min-width: 27.7vw;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin: 0px 0px 20px 0px;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.7;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #b65e0c;
+  border-color: #9861c2;
+}

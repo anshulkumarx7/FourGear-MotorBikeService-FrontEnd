@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "../Styles/Signup.css";
 import axios from "axios";
 import { CgDanger } from "react-icons/cg";
 import { ThreeDots } from "react-loader-spinner";
 import signUpValidation from "../schemas/signupValidation";
-import loginValidation from "../schemas/loginValidation";
+import { SignupContext } from "../Context/signupContext";
+import { useNavigate } from "react-router-dom";
 function Signup() {
+  const navigate =useNavigate();
   const [loading, setLoading] = useState(false);
-  const [signupData, setSignupData] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    password: "",
-  });
+  const { signupData,setSignupData} = useContext(SignupContext);
+  
   const [errors, setErrors] = useState({});
   function handleChange(event) {
     const { name, value } = event.target;
@@ -26,6 +24,7 @@ function Signup() {
     try {
       setLoading(true);
       const response = await axios.request(config);
+      navigate("/otp");
       setLoading(false);
       console.log(JSON.stringify(response.data));
     } catch (error) {

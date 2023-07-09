@@ -27,6 +27,23 @@ function Login() {
     },
     data: loginData,
   };
+  // let configForget = {
+  //   method: 'post',
+  //   maxBodyLength: Infinity,
+  //   url: 'http://localhost:5000/api/auth/forget',
+  //   headers: { 
+  //     'Content-Type': 'application/json'
+  //   },
+  //   data : data
+  // };
+  const forgetPassword=async(configForget)=>{
+    try{
+      const res= await axios.request(configForget);
+      console.log(JSON.stringify(res.data));
+    }catch(error){
+      console.log(error);
+    }
+  }
   //  handleBlur function
   const handleBlur = (event) => {
     const { name } = event.target;
@@ -63,7 +80,7 @@ function Login() {
   return (
     <div className="fourGearSignin">
       <div className="fourGearSigninForm">
-        <h2>Login</h2>
+        <h2>Welcome back!</h2>
         <div className="fourGearSigninFormContainer">
           <form onSubmit={handleSubmit}>
             <div className="fourgearLoginFormInput">
@@ -107,6 +124,9 @@ function Login() {
                 </div>
               )}
             </div>
+            <div className="fourGearForgetPassword" onClick={forgetPassword}>
+              <Link to="">Forget Password ?</Link>
+            </div>
             <div className="fourGearSigninButton bt-signin">
               <button onSubmit={handleSubmit}>
                 {loading ? (
@@ -125,6 +145,7 @@ function Login() {
                 )}
               </button>
             </div>
+            
             <div className="fourGearRegisterButton bt-signin">
               <Link to="/signup">
                 <button>Register</button>

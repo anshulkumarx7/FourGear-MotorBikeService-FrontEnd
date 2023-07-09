@@ -57,12 +57,27 @@ export const AuthProvider = ({ children }) => {
   }, [tokenExpiration]);
 
   //regenerateToken
+  // /api/auth/user
+  let config1={
+    headers: { 
+      'Authorization': `Bearer ${refreshToken}`
+    }
+  }
+  const getUser =async()=>{
+    try{
+      const res=await axios.get("http://localhost:5000/api/auth/user",config1);
+      console.log(JSON.stringify(res.data));
 
-  const regenerateToken = async(configRegenerateToken) => {
+    }catch(error){
+      console.log(error);
+    }
+  }
+  const regenerateToken = async(configRegenerateToken,config1) => {
     try{
         console.log('Regenerating')
         const response = await axios.request(configRegenerateToken);
         console.log(response);
+        getUser(config1);
         const newAccessToken = response.data.token;
 
         localStorage.setItem('accessToken', newAccessToken);
@@ -91,22 +106,17 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('tokenExpiration', Date.now() / 1000 + 20);
 
         setAccessToken(accessToken);
-
         setRefreshToken(refreshToken);
-
         setTokenExpiration(Date.now() / 1000 + 20);
-
         console.log(tokenExpiration);
         setIsLoggedIn(true);
+        navigate("/otp");
         setLoading(false);
         console.log(JSON.stringify(response.data));
         console.log("navigate");
-        navigate("/profile");
+        // navigate("/profile");
         console.log("navigated");
-        
-   
         setLoginError("");
-
       } catch (error) {
         console.log(error);
         setLoginError(error.response.data.message);
@@ -128,7 +138,7 @@ export const AuthProvider = ({ children }) => {
   };
 
 return (
-    <AuthContext.Provider value={{ isLoggedIn,logout,loading,setLoading,loginData,setLoginData,login,loginError,regenerateToken}}>
+    <AuthContext.Provider value={{ isLoggedIn,logout,loading,setLoading,loginData,setLoginData,login,loginError,accessToken,regenerateToken}}>
       {children}
     </AuthContext.Provider>
   );

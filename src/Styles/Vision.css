@@ -35,6 +35,7 @@
   font-size: 2.638vw;
   line-height: 2.84vw;
   color: #b65e0c;
+  padding:1rem;
 }
 .fourGearVisionContent h3 {
   font-weight: 400;
@@ -42,12 +43,20 @@
   line-height: 1.94vw;
   text-align: center;
 }
-@media screen and (max-width:470px){
+@media screen and (max-width:500px){
     .fourGearVisionContainer img{
         max-width:10.8rem;
         height:10.8rem;
     }
     .fourGearVision{
         padding: 2rem 0;
+    }
+    .fourGearVisionContent h1{
+      font-size: 2rem;
+      padding-bottom: 1rem;
+    }
+    .fourGearVisionContent h3{
+      font-size: 1rem;
+      line-height: 1.5rem;
     }
 }
