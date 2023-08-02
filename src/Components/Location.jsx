@@ -22,15 +22,7 @@ function Location() {
     longitude: "",
   });
   
-  let config = {
-    method: 'post',
-    maxBodyLength: Infinity,
-    url: 'http://localhost:5000/api/book/bike',
-    headers: { 
-      'Content-Type': 'application/json'
-    },
-    data : bookServiceDetails
-  };
+  
   const handleBlur = (event) => {
     const { name } = event.target;
     try {
@@ -60,18 +52,34 @@ function Location() {
       ...prevValue,
       [name]: value,
     }));
-    setBookServiceDetails((prevBookingDetails)=>({
-      ...prevBookingDetails,
-      "map":map,
-      "address":address
-    }))
+    // setBookServiceDetails((prevBookingDetails)=>({
+    //   ...prevBookingDetails,
+    //   "map":map,
+    //   "address":address
+    // }))
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   }
+  // const detailsBikeBooking={
+  //   bookServiceDetails,
+  //   "map":map,
+  //   "address":address
+  // }
+  
+  let config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'http://localhost:5000/api/book/bike',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : bookServiceDetails
+  };
   const booking =async(config)=>{
     try{
       setLoading(true);
       
       console.log(bookServiceDetails);
+      // console.log(detailsBikeBooking);
       // console.log(address);
       const response = await axios.request(config);
       console.log(JSON.stringify(response.data));

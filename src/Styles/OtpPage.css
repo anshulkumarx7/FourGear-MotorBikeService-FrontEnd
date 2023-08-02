@@ -51,6 +51,11 @@
   text-align: center;
   font-weight: 300;
 }
+.otpButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (max-width: 600px) {
   .code-container {
@@ -100,10 +105,14 @@
   border-radius: 10px;
   text-transform: uppercase;
   letter-spacing: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary {
   color: #fff;
   background-color: #b65e0c;
   border-color: #9861c2;
+  
 }

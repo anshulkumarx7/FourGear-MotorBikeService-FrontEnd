@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.fourGearSuccess {
+  width: 100vw;
+  max-width: 100%;
+  padding: 10rem 0;
+  background: linear-gradient(
+    360deg,
+    rgba(255, 255, 255, 0.44) 0%,
+    rgba(200, 97, 2, 0.31) 100%
+  );
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourGearSuccessContainer {
+  width: 73.88vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fourGearSuccessContainer img {
+  max-width: 20.01vw;
+  height: 100%;
+}
+.fourGearSuccessMssg {
+  width: 46.8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fourGearSuccessMssg h1 {
+  color: #b65e0c;
+  font-size: 2.7vw;
+  font-weight: 600;
+  text-align: center;
+}
+.fourGearSuccessMssg h5 {
+  font-size: 1.9305vw;
+  margin-top: 1.2rem;
+  font-weight: 300;
+  text-align: center;
+}
+.fourGearSuccessMssg a {
+  text-align: center;
+  font-size: 1.7vw;
+  font-weight: 500;
+  margin-top: 1.2rem;
+  color:#b65e0c;
+  text-decoration: none;
+  cursor:pointer;
+}
+@media (min-width: 535px) and (max-width: 700px) {
+  .fourGearSuccess {
+    padding: 12rem 0;
+  }
+  .fourGearSuccess {
+    padding: 12rem 0;
+  }
+  .fourGearSuccessContainer {
+    flex-direction: column;
+  }
+  .fourGearSuccessContainer img {
+    max-width: 25vw;
+  }
+  .fourGearSuccessMssg {
+    margin-top: 2rem;
+    width: 59vw;
+  }
+  .fourGearSuccessMssg h1 {
+    font-size: 2.5rem;
+  }
+  .fourGearSuccessMssg h5 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 535px) {
+  .fourGearSuccess {
+    height: 81vh;
+  }
+  .fourGearSuccessContainer {
+    flex-direction: column;
+  }
+  .fourGearSuccessContainer img {
+    max-width: 45vw;
+  }
+  .fourGearSuccessMssg {
+    margin-top: 2rem;
+    width: 70vw;
+  }
+  .fourGearSuccessMssg h1 {
+    font-size: 2.5rem;
+  }
+  .fourGearSuccessMssg h5 {
+    font-size: 1.5rem;
+  }
+}

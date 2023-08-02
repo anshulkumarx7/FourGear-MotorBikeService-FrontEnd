@@ -24,7 +24,7 @@ function Signup() {
     try {
       setLoading(true);
       const response = await axios.request(config);
-      navigate("/otp");
+      navigate("/signup/otp");
       setLoading(false);
       console.log(JSON.stringify(response.data));
     } catch (error) {

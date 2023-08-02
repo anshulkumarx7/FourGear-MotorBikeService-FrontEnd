@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/Hero.css";
-import mobileLogo from "../assets/mobile 1.svg";
+import mobileLogo from "../assets/mobilemotomagicians.svg";
 function Hero() {
   return (
     <div className="fourGearHero">

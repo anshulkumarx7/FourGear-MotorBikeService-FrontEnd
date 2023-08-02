@@ -15,6 +15,9 @@ import { AuthProvider } from "./Context/AuthContext";
 import { BookingProvider } from "./Context/bookingContext";
 import { SignupProvider } from "./Context/signupContext";
 import OtpPage from "./Components/OtpPage";
+import Success from "./Components/Success";
+import LoginP from "./pages/LoginP";
+import SignupP from "./pages/SignupP";
 
 function App() {
   return (
@@ -28,6 +31,7 @@ function App() {
                 <Route path="/" element={<Home />}>
                   <Route path="/" element={<BookService />} />
                   <Route path="/location" element={<Location />} />
+                  {/* <Route path="/success" element={<Success/>} /> */}
                 </Route>
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<ContactL />} />
@@ -36,9 +40,16 @@ function App() {
                   <Route path="/service/location" element={<Location />} />
                 </Route>
 
-                <Route path="/signin" element={<Login />} />
-                <Route path="/otp" element={<OtpPage />} />
-                <Route path="/signup" element={<Signup />} />
+                <Route path="/signin" element={<LoginP />}>
+                  <Route path="/signin" element={<Login />} />
+                  <Route path="/signin/otp" element={<OtpPage />} />
+                  <Route path="/signin/profile" element={<Profile />} />
+                </Route>
+                <Route path="/signup" element={<SignupP />}>
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="/signup/otp" element={<OtpPage />} />
+                  <Route path="/signup/success" element={<Success />} />
+                </Route>
                 <Route path="/profile" element={<Profile />} />
               </Routes>
             </SignupProvider>

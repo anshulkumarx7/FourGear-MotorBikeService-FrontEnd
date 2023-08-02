@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
   const [refreshToken, setRefreshToken] = useState(null);
+  const [loginErrorMssg,setLoginErrorMssg]=useState("");
   const [tokenExpiration, setTokenExpiration] = useState(0);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -110,7 +111,7 @@ export const AuthProvider = ({ children }) => {
         setTokenExpiration(Date.now() / 1000 + 20);
         console.log(tokenExpiration);
         setIsLoggedIn(true);
-        navigate("/otp");
+        navigate("/signin/otp");
         setLoading(false);
         console.log(JSON.stringify(response.data));
         console.log("navigate");
@@ -118,6 +119,9 @@ export const AuthProvider = ({ children }) => {
         console.log("navigated");
         setLoginError("");
       } catch (error) {
+        // if(error.response && error.response.status === 401){
+        //   console.log(error.response.data.message);
+        // }
         console.log(error);
         setLoginError(error.response.data.message);
         setIsLoggedIn(false);

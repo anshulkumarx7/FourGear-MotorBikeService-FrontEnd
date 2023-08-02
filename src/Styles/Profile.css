@@ -3,8 +3,6 @@
   width: 100vw;
   max-width: 100%;
   height:100%;
-  /* height: 100vh; */
-  /* border: 2px solid black; */
   background-color: #eeeeee;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -67,16 +65,18 @@
 }
 .fourGearProfileDetailsContainer h2 {
   font-weight: 600;
-  font-size: 1.12vw;
-  line-height: 1.25vw;
+  font-size: 2.12vw;
+  line-height: 1.9vw;
   color: #ffffff;
   padding-bottom: 1rem;
+  padding-right:4rem;
 }
 .fourGearProfileDetailsContainer h4 {
   font-weight: 400;
-  font-size: 0.97vw;
-  line-height: 1.66vw;
+  font-size: 1.27vw;
+  line-height: 1.3vw;
   padding-bottom: 0.5rem;
+  padding-right:4rem;
   color: #ffffff;
 }
 .fourGearServiceDetails {

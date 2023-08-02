@@ -1,11 +1,11 @@
 import React, { useState,useContext } from "react";
 import "../Styles/OtpPage.css";
-import { CgSmileUpside } from "react-icons/cg";
 import { SignupContext } from "../Context/signupContext";
 import axios from "axios";
 import { Verification } from "../Constants";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
+import { ThreeDots } from "react-loader-spinner";
 function OtpPage() {
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const { signupData,setSignupData} = useContext(SignupContext);
@@ -55,8 +55,8 @@ function OtpPage() {
       const response=await axios.request(config);
       console.log(JSON.stringify(response.data));
       setLoading(false);
-      {isLoggedIn?alert("Successfully logged in"):alert("Successfully Signed up")};
-      {isLoggedIn?navigate("/profile"):navigate("/signin")}
+      // {isLoggedIn?alert("Successfully logged in"):alert("Successfully Signed up")};
+      {isLoggedIn?navigate("/signin/profile"):navigate("/signup/success")}
       
     }catch(error){
       console.log(error);
@@ -100,9 +100,22 @@ function OtpPage() {
           })}
         </div>
 
-        <div>
+        <div className="otpButton">
           <button type="button" class="btn btn-primary" onClick={handleSubmit}>
-            Verify
+          {loading ? (
+                  <ThreeDots
+                    height="30"
+                    width="30"
+                    radius="9"
+                    color="#ffffff"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                  />
+                ) : (
+                  <>Verify</>
+                )}
           </button>
         </div>
 

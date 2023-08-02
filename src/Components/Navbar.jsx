@@ -6,7 +6,7 @@ import TwitterLogo from "../assets/twitter 1.svg";
 import InstaGramLogo from "../assets/instagram 1.svg";
 import LinkedinLogo from "../assets/linkedin 1.svg";
 import CallLogo from "../assets/phone-call 1.svg";
-import FourgearLogo from "../assets/lopgo 1.svg";
+import FourgearLogo from "../assets/LogoMotoMagicians.svg";
 import UserLogo from "../assets/user-circle 1.svg";
 import Cross from "../assets/cross.svg";
 import Bars from "../assets/bars.svg";
