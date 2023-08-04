@@ -21,7 +21,7 @@ function Login() {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/auth/login",
+    url: "/api/auth/login",
     headers: {
       "Content-Type": "application/json",
     },

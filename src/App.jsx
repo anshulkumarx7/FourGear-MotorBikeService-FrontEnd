@@ -18,6 +18,14 @@ import OtpPage from "./Components/OtpPage";
 import Success from "./Components/Success";
 import LoginP from "./pages/LoginP";
 import SignupP from "./pages/SignupP";
+import axios from "axios";
+const baseURL =
+	window.location.hostname === "motomagicians.com"
+		? "https://backend.motomagicians.com"
+		: "http://localhost:5000";
+// console.log(baseURL);
+
+axios.defaults.baseURL=baseURL;
 
 function App() {
   return (
