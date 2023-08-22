@@ -9,44 +9,8 @@ function Benefit() {
   return (
     <div className="fourGearBenefit">
       <div className="fourGearBenefitContainer">
-        <h1>Four Gear Benefits</h1>
+        <h1>Moto Magicians Benefits</h1>
         <div className="fourGearBenefitInnerContainer">
-          {/* <div className="fourGearBenefitBox">
-            <div className="fourGearBenefitInnerBox">
-              <img src={BenefitLogo1}></img>
-              <div className="fourGearBenefitInnerContent">
-                <h2>15 days Free Service Gurantee</h2>
-                <h5>15 days Unconditional Warranty</h5>
-              </div>
-            </div>
-          </div>
-          <div className="fourGearBenefitBox">
-            <div className="fourGearBenefitInnerBox">
-              <img src={BenefitLogo1}></img>
-              <div className="fourGearBenefitInnerContent">
-                <h2>15 days Free Service Gurantee</h2>
-                <h5>15 days Unconditional Warranty</h5>
-              </div>
-            </div>
-          </div>
-          <div className="fourGearBenefitBox">
-            <div className="fourGearBenefitInnerBox">
-              <img src={BenefitLogo1}></img>
-              <div className="fourGearBenefitInnerContent">
-                <h2>15 days Free Service Gurantee</h2>
-                <h5>15 days Unconditional Warranty</h5>
-              </div>
-            </div>
-          </div>
-          <div className="fourGearBenefitBox">
-            <div className="fourGearBenefitInnerBox">
-              <img src={BenefitLogo1}></img>
-              <div className="fourGearBenefitInnerContent">
-                <h2>15 days Free Service Gurantee</h2>
-                <h5>15 days Unconditional Warranty</h5>
-              </div>
-            </div>
-          </div> */}
           <BenefitBox
             logo={BenefitLogo1}
             title="15 days Free Service Gurantee"

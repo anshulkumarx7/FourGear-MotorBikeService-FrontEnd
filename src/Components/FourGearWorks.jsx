@@ -8,7 +8,7 @@ function FourGearWorks() {
   return (
     <div className="fourGearWork">
       <div className="fourGearworkContainer">
-        <h1>How Four Gear Works?</h1>
+        <h1>How Moto Magicians Works?</h1>
         <div className="fourGearWorkInnerContainer">
         <div className="fourGearWorkTimeline">
           <img src={TimeLine1}></img>

@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   let configRegenerateToken = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: 'http://localhost:5000/api/auth/refresh',
+    url: '/api/auth/refresh',
     headers: { 
       'Authorization': `Bearer ${refreshToken}`
     }
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
   }
   const getUser =async()=>{
     try{
-      const res=await axios.get("http://localhost:5000/api/auth/user",config1);
+      const res=await axios.get("/api/auth/user",config1);
       console.log(JSON.stringify(res.data));
 
     }catch(error){

@@ -16,13 +16,13 @@ function Profile() {
     let configRegenerateToken = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/api/auth/refresh",
+      url: "/api/auth/refresh",
       headers: {
         Authorization: `Bearer ${refreshToken}`,
       },
     };
-    const urlUser = "http://localhost:5000/api/auth/user";
-    const urlBooking="http://localhost:5000/api/bookings/bike"
+    const urlUser = "/api/auth/user";
+    const urlBooking="/api/bookings/bike"
     const headers = {
       Authorization: `Bearer ${accessToken}`,
     };

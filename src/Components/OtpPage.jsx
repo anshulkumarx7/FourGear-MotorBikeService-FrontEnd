@@ -31,7 +31,7 @@ function OtpPage() {
   let signupconfig = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://localhost:5000/api/auth/register/verify',
+    url: '/api/auth/register/verify',
     headers: { 
       'Content-Type': 'application/json', 
     },
@@ -40,7 +40,7 @@ function OtpPage() {
   let loginconfig = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://localhost:5000/api/auth/verify',
+    url: '/api/auth/verify',
     headers: { 
       'Content-Type': 'application/json', 
       'Authorization': `Bearer ${accessToken}`

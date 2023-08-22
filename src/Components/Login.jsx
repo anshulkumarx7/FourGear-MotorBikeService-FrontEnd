@@ -7,7 +7,6 @@ import "../Styles/Login.css";
 import loginValidation from "../schemas/loginValidation";
 import { AuthContext } from '../Context/AuthContext';
 function Login() {
-  // const navigate = useNavigate();
   const { isLoggedIn,setLoading,loading,loginData,setLoginData, login,loginError} = useContext(AuthContext);
   const [errors, setErrors] = useState({});
   function handleChange(event) {
@@ -27,15 +26,6 @@ function Login() {
     },
     data: loginData,
   };
-  // let configForget = {
-  //   method: 'post',
-  //   maxBodyLength: Infinity,
-  //   url: 'http://localhost:5000/api/auth/forget',
-  //   headers: { 
-  //     'Content-Type': 'application/json'
-  //   },
-  //   data : data
-  // };
   const forgetPassword=async(configForget)=>{
     try{
       const res= await axios.request(configForget);

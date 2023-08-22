@@ -11,7 +11,7 @@ function Hero() {
             <p>Experience The Best</p>
             <p className="bd">Two Wheeler</p>
             <p>Service with</p>
-            <p className="bd">Four Gear</p>
+            <p className="bd">Moto Magicians</p>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ function Features() {
     <div className="fourGearFeature">
       <div className="fourGearFeatureContainer">
         <div className="fourGearFeatureContent">
-          <h2>Book Four Gear - Doorstep Bike Service</h2>
+          <h2>Book Moto Magicians - Doorstep Bike Service</h2>
           <p>
             No time to go to a bike workshop or Scooter Service Center? No
             worries! With one tap, we bring the two wheeler workshop to you.

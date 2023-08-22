@@ -69,7 +69,7 @@ function BookService() {
             <h2>Two Wheeler Services @ Home</h2>
             <p>
               Get the best bike service center experience at the comfort of your
-              home or office when using Four Gears to book bike repair or
+              home or office when using Moto Magicians to book bike repair or
               service online. Choose from our vast motorbike service offerings
               and avail time & cost savings.
             </p>

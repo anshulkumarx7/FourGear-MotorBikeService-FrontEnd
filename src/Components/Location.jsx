@@ -52,40 +52,40 @@ function Location() {
       ...prevValue,
       [name]: value,
     }));
-    // setBookServiceDetails((prevBookingDetails)=>({
-    //   ...prevBookingDetails,
-    //   "map":map,
-    //   "address":address
-    // }))
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   }
-  // const detailsBikeBooking={
-  //   bookServiceDetails,
-  //   "map":map,
-  //   "address":address
-  // }
+  const detailsBikeBooking={
+    "bookingDetails":bookServiceDetails,
+    "map":map,
+    "address":address
+  }
   
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://localhost:5000/api/book/bike',
+    url: '/api/book/bike',
     headers: { 
       'Content-Type': 'application/json'
     },
-    data : bookServiceDetails
+    data : detailsBikeBooking
   };
   const booking =async(config)=>{
     try{
       setLoading(true);
-      
-      console.log(bookServiceDetails);
-      // console.log(detailsBikeBooking);
-      // console.log(address);
+      console.log(detailsBikeBooking);
       const response = await axios.request(config);
       console.log(JSON.stringify(response.data));
       alert(response.data.message);
       navigate("/");
       setLoading(false);
+      setBookServiceDetails({
+        name: "",
+        phone: "",
+        email: "",
+        city: "",
+        bike_Company: "",
+        bike_Model: "",
+      })
     }catch(error){
       console.log(error);
     }

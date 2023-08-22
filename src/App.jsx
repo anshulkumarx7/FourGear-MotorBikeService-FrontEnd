@@ -22,7 +22,7 @@ import axios from "axios";
 const baseURL =
 	window.location.hostname === "motomagicians.com"
 		? "https://backend.motomagicians.com"
-		: "http://localhost:5000";
+		: "https://backend.motomagicians.com";
 // console.log(baseURL);
 
 axios.defaults.baseURL=baseURL;

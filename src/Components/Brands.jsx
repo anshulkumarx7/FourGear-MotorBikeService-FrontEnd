@@ -9,42 +9,6 @@ function Brands() {
           <h1>We Look After All Brands</h1>
         </div>
         <div className="fourGearBrandInnerContainer">
-          {/* <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div>
-        <div className="fourGearBrandLogo">
-            <img src={Logo1}></img>
-        </div> */}
         {LogoData.map( (data,index) => (
           <div className="fourGearBrandLogo" key={index}>
             <img src={data.image} alt={index}></img>
